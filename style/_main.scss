@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+@mixin flex($flex-direcction, $justify-content, $align-items) {
+    flex-direction: $flex-direcction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+.container {
+    background-color: aquamarine;
+    height: 100vh;
+    display: flex;
+    @include flex(column, center, center)
+}
+.color_title {
+    width: 70%;
+    height: 20%;
+    background-color: antiquewhite;
+    margin-bottom: 5%;
+    display: flex;
+    @include flex(column, center, center)
+}
+
+.change_color {
+    width: 10%;
+    height: 5%;
+    border: none;
+}
+.control_block {
+    width: 50%;
+    height: 30%;
+    display: flex;
+    @include flex(column, center, center)
+}
+.color {
+    background: linear-gradient(to right, red 0%, #ff0 17%, lime 33%, cyan 50%, blue 66%, #f0f 83%, red 100%);
+    width: 50%;
+    height: 5%;
+}
+.control_button {
+    height: 100%;
+    width: 3%;
+    background-color: black;
+    
+}
+
+
+
