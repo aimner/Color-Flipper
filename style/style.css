@@ -79,7 +79,7 @@
   position: relative;
 }
 
-.control_button {
+.color_scroll_control_button {
   height: 120%;
   width: 2%;
   background-color: black;
@@ -88,8 +88,9 @@
 
 .color_panel {
   height: 40%;
-  width: 70%;
+  width: 480px;
   position: relative;
+  background: red;
 }
 
 .color_panel_white,
@@ -107,5 +108,15 @@
 .color_panel_black {
   background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#000));
   background: linear-gradient(to bottom, transparent 0%, #000 100%);
+}
+
+.color_panel_button {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #964747;
+  border: 2px solid black;
+  border-radius: 50%;
+  z-index: 1;
 }
 /*# sourceMappingURL=style.css.map */

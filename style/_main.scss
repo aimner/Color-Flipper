@@ -44,7 +44,7 @@
     margin-bottom: 20px;
     position: relative;
 }
-.control_button {
+.color_scroll_control_button {
     height: 120%;
     width: 2%;
     background-color: black;
@@ -53,8 +53,9 @@
 }
 .color_panel {
     height: 40%;
-    width: 70%;
+    width: 480px;
     position: relative;
+    background: rgb(255, 0, 0) ;
 }
 
 .color_panel_white,
@@ -69,6 +70,17 @@
 
 .color_panel_black {
     background: linear-gradient(to bottom, transparent 0%, #000 100%);
+}
+
+.color_panel_button {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(150, 71, 71);
+    border: 2px solid black;
+    border-radius: 50%;
+    z-index: 1;
+
 }
 
 
