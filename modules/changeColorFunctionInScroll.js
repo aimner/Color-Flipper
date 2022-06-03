@@ -1,4 +1,5 @@
 import gaps from "./gaps.js"
+import chooseFunction from "./chooseClass.js"
 
 const colorScroll = document.querySelector('.color_scroll')
 const colorPanel = document.querySelector('.color_panel')
@@ -78,7 +79,6 @@ function chooseColorMove() {
 
         if (event.which === 1) {
 
-
             let mouseCoordX = event.clientX - colorPanel.offsetLeft;
             let mouseCoordY = event.clientY - colorPanel.offsetTop;
 
@@ -87,70 +87,22 @@ function chooseColorMove() {
                 colorPanelButton.style.top = `${mouseCoordY - colorPanelButton.offsetWidth / 2}px`;
                 switch (controlPointGaps) {
                     case 1:
-                        function choose1() {
-                            let coordinast1 = 255 - (mouseCoordY * 255 / colorPanel.offsetHeight);
-                            let coordinast2X = 255 - (mouseCoordX * (255 - rgbNumber) / colorPanel.offsetWidth);
-                            let coordinast2Y = (colorPanel.offsetHeight - mouseCoordY) * coordinast2X / colorPanel.offsetHeight;
-                            let coordinast3X = 255 - (mouseCoordX * 255 / (colorPanel.offsetWidth));
-                            let coordinast3Y = (colorPanel.offsetHeight - mouseCoordY) * coordinast3X / colorPanel.offsetHeight;
-                            colorTitle.style.background = `rgb(${coordinast1}, ${coordinast2Y}, ${coordinast3Y})`;
-                        }
-                        choose1()
+                        chooseFunction.choose1(mouseCoordX, mouseCoordY, colorPanel, rgbNumber, colorTitle)
                         break;
                     case 2:
-                        function choose2() {
-                            let coordinast2 = 255 - (mouseCoordY * 255 / colorPanel.offsetHeight);
-                            let coordinast1X = 255 - ((mouseCoordX * rgbNumber) / colorPanel.offsetWidth);
-                            let coordinast1Y = (colorPanel.offsetHeight - mouseCoordY) * coordinast1X / colorPanel.offsetHeight;
-                            let coordinast3X = 255 - (mouseCoordX * 255 / (colorPanel.offsetWidth));
-                            let coordinast3Y = (colorPanel.offsetHeight - mouseCoordY) * coordinast3X / colorPanel.offsetHeight;
-                            colorTitle.style.background = `rgb(${coordinast1Y}, ${coordinast2}, ${coordinast3Y})`;
-                        }
-                        choose2()
+                        chooseFunction.choose2(mouseCoordX, mouseCoordY, colorPanel, rgbNumber, colorTitle)
                         break;
                     case 3:
-                        function choose3() {
-                            let coordinast2 = 255 - (mouseCoordY * 255 / colorPanel.offsetHeight);
-                            let coordinast3X = 255 - ((mouseCoordX * (255 - rgbNumber)) / colorPanel.offsetWidth);
-                            let coordinast3Y = (colorPanel.offsetHeight - mouseCoordY) * coordinast3X / colorPanel.offsetHeight;
-                            let coordinast1X = 255 - (mouseCoordX * 255 / (colorPanel.offsetWidth));
-                            let coordinast1Y = (colorPanel.offsetHeight - mouseCoordY) * coordinast1X / colorPanel.offsetHeight;
-                            colorTitle.style.background = `rgb(${coordinast1Y}, ${coordinast2}, ${coordinast3Y})`;
-                        }
-                        choose3()
+                        chooseFunction.choose3(mouseCoordX, mouseCoordY, colorPanel, rgbNumber, colorTitle)
                         break;
                     case 4:
-                        function choose4() {
-                            let coordinast3 = 255 - (mouseCoordY * 255 / colorPanel.offsetHeight);
-                            let coordinast2X = 255 - ((mouseCoordX * rgbNumber) / colorPanel.offsetWidth);
-                            let coordinast2Y = (colorPanel.offsetHeight - mouseCoordY) * coordinast2X / colorPanel.offsetHeight;
-                            let coordinast1X = 255 - (mouseCoordX * 255 / (colorPanel.offsetWidth));
-                            let coordinast1Y = (colorPanel.offsetHeight - mouseCoordY) * coordinast1X / colorPanel.offsetHeight;
-                            colorTitle.style.background = `rgb(${coordinast1Y}, ${coordinast2Y}, ${coordinast3})`;
-                        }
-                        choose4()
+                        chooseFunction.choose4(mouseCoordX, mouseCoordY, colorPanel, rgbNumber, colorTitle)
                         break;
                     case 5:
-                        function choose5() {
-                            let coordinast3 = 255 - (mouseCoordY * 255 / colorPanel.offsetHeight);
-                            let coordinast1X = 255 - ((mouseCoordX * (255 - rgbNumber)) / colorPanel.offsetWidth);
-                            let coordinast1Y = (colorPanel.offsetHeight - mouseCoordY) * coordinast1X / colorPanel.offsetHeight;
-                            let coordinast2X = 255 - (mouseCoordX * 255 / (colorPanel.offsetWidth));
-                            let coordinast2Y = (colorPanel.offsetHeight - mouseCoordY) * coordinast2X / colorPanel.offsetHeight;
-                            colorTitle.style.background = `rgb(${coordinast1Y}, ${coordinast2Y}, ${coordinast3})`;
-                        }
-                        choose5()
+                        chooseFunction.choose5(mouseCoordX, mouseCoordY, colorPanel, rgbNumber, colorTitle)
                         break;
                     case 6:
-                        function choose6() {
-                            let coordinast1 = 255 - (mouseCoordY * 255 / colorPanel.offsetHeight);
-                            let coordinast3X = 255 - ((mouseCoordX * rgbNumber) / colorPanel.offsetWidth);
-                            let coordinast3Y = (colorPanel.offsetHeight - mouseCoordY) * coordinast3X / colorPanel.offsetHeight;
-                            let coordinast2X = 255 - (mouseCoordX * 255 / (colorPanel.offsetWidth));
-                            let coordinast2Y = (colorPanel.offsetHeight - mouseCoordY) * coordinast2X / colorPanel.offsetHeight;
-                            colorTitle.style.background = `rgb(${coordinast1}, ${coordinast2Y}, ${coordinast3Y})`;
-                        }
-                        choose6()
+                        chooseFunction.choose6(mouseCoordX, mouseCoordY, colorPanel, rgbNumber, colorTitle)
                         break;
                     default:
                         break;
@@ -161,8 +113,5 @@ function chooseColorMove() {
     })
 }
 
-
-console.log(colorPanel.offsetWidth)
-console.log(colorPanel.offsetHeight)
 
 export { scrollColorPanel, changeColorScroll }

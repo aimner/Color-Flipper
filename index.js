@@ -37,34 +37,4 @@ colorScroll.addEventListener('mousedown', scrollColorPanel)
 
 
 
-// function chooseColorClick(event) {
-//     let mouseCoordX = event.clientX - colorPanel.offsetLeft;
-//     let mouseCoordY = event.clientY - colorPanel.offsetTop;
-//     colorPanelButton.style.left = `${mouseCoordX - colorPanelButton.offsetWidth / 2}px`;
-//     colorPanelButton.style.top = `${mouseCoordY  - colorPanelButton.offsetWidth / 2}px`;
-//     console.log(mouseCoordX, mouseCoordY)
-    
-    
-// }
-
-// colorPanel.addEventListener('mousedown', (event) => chooseColorClick(event))
-
-// colorPanel.addEventListener('mousedown', chooseColorMove)
-
-// function chooseColorMove() {
-//     // console.log(controlPointGaps)
-//     // controlPointGaps = null
-//     colorPanel.addEventListener('click', event => {
-
-//         if (event.which === 1) {
-//             let mouseCoordX = event.clientX - colorPanel.offsetLeft;
-//             let mouseCoordY = event.clientY - colorPanel.offsetTop;
-//             if (mouseCoordX > 0 && mouseCoordX <= colorPanel.offsetWidth) {
-//                 colorPanelButton.style.left = `${mouseCoordX - colorPanelButton.offsetWidth / 2}px`;
-//                 colorPanelButton.style.top = `${mouseCoordY  - colorPanelButton.offsetWidth / 2}px`;
-//             }
-//         }
-//     })
-// }
-
 
