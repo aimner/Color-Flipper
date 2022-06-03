@@ -28,9 +28,8 @@ function changeColorScroll(event) {
     for (let i = 1; i <= 6; i++) {
         if (mouseСoordinatesColorPanel <= gaps[i] && mouseСoordinatesColorPanel >= gaps[i - 1]) {
             rgbNumber = Math.floor((mouseСoordinatesColorPanel - (colorScroll.offsetWidth / 6) * gaps.indexOf(gaps[i - 1])) * 255 / (colorScroll.offsetWidth / 6));
-            // console.log(gaps.indexOf(gaps[i]))
-            // rgb = rgbNumber
             controlPointGaps = gaps.indexOf(gaps[i])
+            console.log(gaps.indexOf(gaps[i]))
             switch (gaps.indexOf(gaps[i])) {
                 case 1:
                     colorPanel.style.background = `rgb(255, ${rgbNumber}, 0)`;
@@ -78,8 +77,7 @@ function chooseColorMove() {
         event.preventDefault()
 
         if (event.which === 1) {
-            // console.log(controlPointGaps)
-            // console.log(colorPanel.style.background)
+
 
             let mouseCoordX = event.clientX - colorPanel.offsetLeft;
             let mouseCoordY = event.clientY - colorPanel.offsetTop;
@@ -90,51 +88,69 @@ function chooseColorMove() {
                 switch (controlPointGaps) {
                     case 1:
                         function choose1() {
-                            rgb = rgbNumber
-                            console.log(rgb)
                             let coordinast1 = 255 - (mouseCoordY * 255 / colorPanel.offsetHeight);
-                            let coordinast2X = 255 - (mouseCoordX * (255 - rgb) / colorPanel.offsetWidth);
+                            let coordinast2X = 255 - (mouseCoordX * (255 - rgbNumber) / colorPanel.offsetWidth);
                             let coordinast2Y = (colorPanel.offsetHeight - mouseCoordY) * coordinast2X / colorPanel.offsetHeight;
                             let coordinast3X = 255 - (mouseCoordX * 255 / (colorPanel.offsetWidth));
                             let coordinast3Y = (colorPanel.offsetHeight - mouseCoordY) * coordinast3X / colorPanel.offsetHeight;
-
-                            // console.log(Math.floor(coordinast1))
-                            // console.log(Math.floor(coordinast2Y))
-                            // console.log(Math.floor(coordinast3Y))
                             colorTitle.style.background = `rgb(${coordinast1}, ${coordinast2Y}, ${coordinast3Y})`;
                         }
                         choose1()
                         break;
                     case 2:
                         function choose2() {
-                            
-                            rgb = 255 - rgbNumber
-                            console.log(rgb)
-                            console.log(mouseCoordX)
                             let coordinast2 = 255 - (mouseCoordY * 255 / colorPanel.offsetHeight);
-                            let coordinast1X = rgb - ((mouseCoordX * rgb) / colorPanel.offsetWidth);
+                            let coordinast1X = 255 - ((mouseCoordX * rgbNumber) / colorPanel.offsetWidth);
                             let coordinast1Y = (colorPanel.offsetHeight - mouseCoordY) * coordinast1X / colorPanel.offsetHeight;
                             let coordinast3X = 255 - (mouseCoordX * 255 / (colorPanel.offsetWidth));
                             let coordinast3Y = (colorPanel.offsetHeight - mouseCoordY) * coordinast3X / colorPanel.offsetHeight;
-    
-                            // console.log(Math.floor(coordinast1))
-                            // console.log(Math.floor(coordinast2Y))
-                            // console.log(Math.floor(coordinast3Y))
                             colorTitle.style.background = `rgb(${coordinast1Y}, ${coordinast2}, ${coordinast3Y})`;
                         }
                         choose2()
                         break;
                     case 3:
-                        colorPanel.style.background = `rgb(0, 255, ${rgbNumber})`;
+                        function choose3() {
+                            let coordinast2 = 255 - (mouseCoordY * 255 / colorPanel.offsetHeight);
+                            let coordinast3X = 255 - ((mouseCoordX * (255 - rgbNumber)) / colorPanel.offsetWidth);
+                            let coordinast3Y = (colorPanel.offsetHeight - mouseCoordY) * coordinast3X / colorPanel.offsetHeight;
+                            let coordinast1X = 255 - (mouseCoordX * 255 / (colorPanel.offsetWidth));
+                            let coordinast1Y = (colorPanel.offsetHeight - mouseCoordY) * coordinast1X / colorPanel.offsetHeight;
+                            colorTitle.style.background = `rgb(${coordinast1Y}, ${coordinast2}, ${coordinast3Y})`;
+                        }
+                        choose3()
                         break;
                     case 4:
-                        colorPanel.style.background = `rgb(0, ${255 - rgbNumber}, 255)`;
+                        function choose4() {
+                            let coordinast3 = 255 - (mouseCoordY * 255 / colorPanel.offsetHeight);
+                            let coordinast2X = 255 - ((mouseCoordX * rgbNumber) / colorPanel.offsetWidth);
+                            let coordinast2Y = (colorPanel.offsetHeight - mouseCoordY) * coordinast2X / colorPanel.offsetHeight;
+                            let coordinast1X = 255 - (mouseCoordX * 255 / (colorPanel.offsetWidth));
+                            let coordinast1Y = (colorPanel.offsetHeight - mouseCoordY) * coordinast1X / colorPanel.offsetHeight;
+                            colorTitle.style.background = `rgb(${coordinast1Y}, ${coordinast2Y}, ${coordinast3})`;
+                        }
+                        choose4()
                         break;
                     case 5:
-                        colorPanel.style.background = `rgb(${rgbNumber}, 0, 255)`;
+                        function choose5() {
+                            let coordinast3 = 255 - (mouseCoordY * 255 / colorPanel.offsetHeight);
+                            let coordinast1X = 255 - ((mouseCoordX * (255 - rgbNumber)) / colorPanel.offsetWidth);
+                            let coordinast1Y = (colorPanel.offsetHeight - mouseCoordY) * coordinast1X / colorPanel.offsetHeight;
+                            let coordinast2X = 255 - (mouseCoordX * 255 / (colorPanel.offsetWidth));
+                            let coordinast2Y = (colorPanel.offsetHeight - mouseCoordY) * coordinast2X / colorPanel.offsetHeight;
+                            colorTitle.style.background = `rgb(${coordinast1Y}, ${coordinast2Y}, ${coordinast3})`;
+                        }
+                        choose5()
                         break;
                     case 6:
-                        colorPanel.style.background = `rgb(255, 0, ${255 - rgbNumber})`;
+                        function choose6() {
+                            let coordinast1 = 255 - (mouseCoordY * 255 / colorPanel.offsetHeight);
+                            let coordinast3X = 255 - ((mouseCoordX * rgbNumber) / colorPanel.offsetWidth);
+                            let coordinast3Y = (colorPanel.offsetHeight - mouseCoordY) * coordinast3X / colorPanel.offsetHeight;
+                            let coordinast2X = 255 - (mouseCoordX * 255 / (colorPanel.offsetWidth));
+                            let coordinast2Y = (colorPanel.offsetHeight - mouseCoordY) * coordinast2X / colorPanel.offsetHeight;
+                            colorTitle.style.background = `rgb(${coordinast1}, ${coordinast2Y}, ${coordinast3Y})`;
+                        }
+                        choose6()
                         break;
                     default:
                         break;
