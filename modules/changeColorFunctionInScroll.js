@@ -6,11 +6,15 @@ const colorPanel = document.querySelector('.color_panel')
 const colorScrollControlButton = document.querySelector('.color_scroll_control_button')
 const colorPanelButton = document.querySelector('.color_panel_button')
 const colorTitle = document.querySelector('.color_title')
+const transparencyScrollRgb = document.querySelector('.transparency_scroll_rgb')
 let controlPointGaps = 1;
 let rgbNumber = 0;
 
 
+
+
 function scrollColorPanel() {
+   
     colorScroll.addEventListener('mousemove', event => {
         if (event.which === 1) {
             let mouseСoordinatesColorPanel = event.clientX - colorScroll.offsetLeft;
@@ -34,27 +38,27 @@ function changeColorScroll(event) {
             switch (controlPointGaps) {
                 case 1:
                     colorPanel.style.background = `rgb(255, ${rgbNumber}, 0)`;
-                    chooseFunctions.choose1(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle)
+                    chooseFunctions.choose1(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb)
                     break;
                 case 2:
                     colorPanel.style.background = `rgb(${255 - rgbNumber}, 255, 0)`;
-                    chooseFunctions.choose2(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle)
+                    chooseFunctions.choose2(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb)
                     break;
                 case 3:
                     colorPanel.style.background = `rgb(0, 255, ${rgbNumber})`;
-                    chooseFunctions.choose3(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle)
+                    chooseFunctions.choose3(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb)
                     break;
                 case 4:
                     colorPanel.style.background = `rgb(0, ${255 - rgbNumber}, 255)`;
-                    chooseFunctions.choose4(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle)
+                    chooseFunctions.choose4(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb)
                     break;
                 case 5:
                     colorPanel.style.background = `rgb(${rgbNumber}, 0, 255)`;
-                    chooseFunctions.choose5(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle)
+                    chooseFunctions.choose5(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb)
                     break;
                 case 6:
                     colorPanel.style.background = `rgb(255, 0, ${255 - rgbNumber})`;
-                    chooseFunctions.choose6(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle)
+                    chooseFunctions.choose6(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb)
                     break;
                 default:
                     break;
@@ -90,22 +94,22 @@ function chooseColorMove() {
 
                 switch (controlPointGaps) {
                     case 1:
-                        chooseFunctions.choose1(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle)
+                        chooseFunctions.choose1(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb)
                         break;
                     case 2:
-                        chooseFunctions.choose2(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle)
+                        chooseFunctions.choose2(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb)
                         break;
                     case 3:
-                        chooseFunctions.choose3(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle)
+                        chooseFunctions.choose3(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb)
                         break;
                     case 4:
-                        chooseFunctions.choose4(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle)
+                        chooseFunctions.choose4(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb)
                         break;
                     case 5:
-                        chooseFunctions.choose5(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle)
+                        chooseFunctions.choose5(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb)
                         break;
                     case 6:
-                        chooseFunctions.choose6(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle)
+                        chooseFunctions.choose6(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb)
                         break;
                     default:
                         break;

@@ -1,7 +1,12 @@
 import { scrollColorPanel, changeColorScroll, chooseColorClick, chooseColorMove } from "./modules/changeColorFunctionInScroll.js"
+import { scrollTransparencyPanel, changeTransparencyScroll } from "./modules/changeTransparency.js"
+import chooseDegree from "./modules/choseeDegree.js"
 
 const colorScroll = document.querySelector('.color_scroll')
 const colorPanel = document.querySelector('.color_panel')
+const degreeCircle = document.querySelector('.degree_circle')
+const transparencyScroll = document.querySelector('.transparency_scroll')
+
 
 
 
@@ -34,35 +39,11 @@ colorPanel.addEventListener('mousedown', (event) => chooseColorClick(event))
 
 colorPanel.addEventListener('mousedown', chooseColorMove)
 
-//////////////////////////////////////////////////
-const degreeCircle = document.querySelector('.degree_circle');
-const degreeControlCircle = document.querySelector('.degree_control_circle');
-const degreePanelText = document.querySelector('.degree_panel_text')
+degreeCircle.addEventListener('mousemove', (event) => chooseDegree(event))
 
-degreeCircle.addEventListener('mousemove', (event) => {
-    let mouseCorrdinatX = event.clientX - degreeCircle.offsetLeft;
-    let mouseCorrdinatY = event.clientY - degreeCircle.offsetTop;
-    if(mouseCorrdinatX <= degreeCircle.offsetWidth / 2 && mouseCorrdinatY <= degreeCircle.offsetHeight / 2) {
-        console.log(4)
-        degreeControlCircle.style.transform = `rotate(${mouseCorrdinatX * 90 / (degreeCircle.offsetWidth / 2) + 270}deg)`
-        degreePanelText.value = degreeControlCircle.style.transform.split('').filter(item => !isNaN(+item) || item === '.').join('');
-    }
-    if(mouseCorrdinatX <= degreeCircle.offsetWidth && mouseCorrdinatX >= degreeCircle.offsetWidth / 2 && mouseCorrdinatY <= degreeCircle.offsetHeight && mouseCorrdinatY >= degreeCircle.offsetHeight / 2) {
-        console.log(2)
-        degreeControlCircle.style.transform = `rotate(${(mouseCorrdinatY - degreeCircle.offsetHeight / 2) * 90 / (degreeCircle.offsetHeight / 2) + 90}deg)`
-        degreePanelText.value = degreeControlCircle.style.transform.split('').filter(item => !isNaN(+item) || item === '.').join('');
-    }
-    if(mouseCorrdinatX <= degreeCircle.offsetWidth && mouseCorrdinatX >= degreeCircle.offsetWidth / 2 && mouseCorrdinatY <= degreeCircle.offsetHeight / 2) {
-        console.log(1)
-        degreeControlCircle.style.transform = `rotate(${mouseCorrdinatY * 90 / (degreeCircle.offsetHeight / 2)}deg)`
-        degreePanelText.value = degreeControlCircle.style.transform.split('').filter(item => !isNaN(+item) || item === '.').join('');
-    }
-    if(mouseCorrdinatX <= degreeCircle.offsetWidth / 2 && mouseCorrdinatY >= degreeCircle.offsetHeight / 2 && mouseCorrdinatY <= degreeCircle.offsetHeight) {
-        console.log(3)
-        degreeControlCircle.style.transform = `rotate(${(degreeCircle.offsetWidth / 2 - mouseCorrdinatX) * 90 / (degreeCircle.offsetWidth / 2) + 180}deg)`
-        degreePanelText.value = degreeControlCircle.style.transform.split('').filter(item => !isNaN(+item) || item === '.').join('');
-    }
-})
+transparencyScroll.addEventListener('mousedown', (event) => changeTransparencyScroll(event))
+
+transparencyScroll.addEventListener('mousedown', scrollTransparencyPanel);
 
 
 
@@ -74,5 +55,57 @@ degreeCircle.addEventListener('mousemove', (event) => {
 
 
 // console.log(rgb)
-let item = 5;
-console.log(typeof item === 'number')
+
+//////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+const procentScroll = document.querySelector('.procent_scroll_control');
+const procentScrollControlButton = document.getElementById('procent_scroll_control_button_1');
+const procentScrollText = document.getElementById('procent_scroll_text_1')
+const procentScrollControlButtons = document.querySelectorAll('.procent_scroll_control_button')
+
+
+
+// procentScroll.addEventListener('mousedown', (event) => changeProcentScroll(event))
+
+procentScrollControlButtons.forEach(item => {
+    item.addEventListener('mousedown',() => scrollProcentPanel(item));
+})
+
+// procentScrollControlButton.addEventListener('mousedown', scrollProcentPanel);
+
+
+
+function scrollProcentPanel(item) {
+    item.addEventListener('mousemove', event => {
+        if (event.which === 1) {
+            let mouseСoordinatesProcentPanel = event.clientX - procentScroll.offsetLeft;
+            if (mouseСoordinatesProcentPanel >= 0 && mouseСoordinatesProcentPanel <= procentScroll.offsetWidth) {
+                // console.log(mouseСoordinatesProcentPanel)
+                // console.log(procentScroll.offsetWidth)
+                changeProcentScroll(event, item)
+            }
+        }
+    })
+}
+
+function changeProcentScroll(event, item) {
+    let mouseСoordinatesProcentPanel = event.clientX - procentScroll.offsetLeft;
+    item.style.left = `${mouseСoordinatesProcentPanel - (procentScrollControlButton.offsetWidth / 2)}px`;
+    // procentScrollText.style.left = `${mouseСoordinatesProcentPanel - (procentScrollControlButton.offsetWidth / 2) - (procentScrollText.offsetWidth / 2 - procentScrollControlButton.offsetWidth / 2)}px`;
+    // let transparency = (+procentScrollControlButton.style.left.split('').filter(item => !isNaN(+item) || item === '.').join('')).toFixed(0);
+    // // console.log(transparency);
+    // procentScrollText.value = (transparency * 100 / procentScroll.offsetWidth).toFixed(0)
+
+}
