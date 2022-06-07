@@ -1,0 +1,41 @@
+.color_panel {
+    height: 40%;
+    width: 450px;
+    position: relative;
+    background: rgb(255, 0, 0) ;
+    margin-bottom: 5px;
+}
+
+.color_panel_white,
+.color_panel_black {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.color_panel_white {
+    background: linear-gradient(to right, #fff 0%, rgba(255,255,255,0) 100%);
+}
+
+.color_panel_black {
+    background: linear-gradient(to bottom, transparent 0%, #000 100%);
+}
+
+.color_panel_button {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: none;
+    border: 2px solid black;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.color_panel_button_active {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: none;
+    border: 2px solid black;
+    border-radius: 50%;
+    z-index: 1;
+}

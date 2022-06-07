@@ -37,114 +37,11 @@
     display: flex;
     @include flex(column, center, center)
 }
-.color_scroll {
-    background: linear-gradient(to right, red 0%, #ff0 17%, lime 33%, cyan 50%, blue 66%, #f0f 83%, red 100%);
-    width:450px;
-    height: 7%;
-    margin-bottom: 20px;
-    position: relative;
-}
-.color_scroll_control_button {
-    height: 120%;
-    width: 2%;
-    background-color: black;
-    position: absolute;
-    
-}
-////////////////////////
-.color_panel {
-    height: 40%;
-    width: 450px;
-    position: relative;
-    background: rgb(255, 0, 0) ;
-    margin-bottom: 5px;
-}
 
-.color_panel_white,
-.color_panel_black {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-}
-.color_panel_white {
-    background: linear-gradient(to right, #fff 0%, rgba(255,255,255,0) 100%);
-}
 
-.color_panel_black {
-    background: linear-gradient(to bottom, transparent 0%, #000 100%);
-}
 
-.color_panel_button {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: none;
-    border: 2px solid black;
-    border-radius: 50%;
-    z-index: 1;
-}
 
-.color_panel_button_active {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: none;
-    border: 2px solid black;
-    border-radius: 50%;
-    z-index: 1;
-}
-////////////////////////////////////
-.degree_panel {
-    height: 50px;
-    width: 150px;
-    background-color: #fff;
-    display: flex;
-    gap: 10px;
-    @include flex(row, flex-start, center)
-}
-.degree_panel_text {
-    width: 50%;
-    height: 90%;
-}
-.degree_circle {
-   width: 33%;
-   height: 100%;
-   border: 3px solid black;
-   border-radius: 50%;
-   display: flex;
-   @include flex(row, center, center)
-}
-.degree_control_circle {
-    height: 100%;
-    width: 8px;
-    display: flex;
-    @include flex(row, flex-start, flex-start);
-}
-.degree_control_circle_button {
-    height: 8px;
-    width: 100%;
-    background-color: #000;
-    border-radius: 50%;
-    margin-top: 5px;
-}
 
-/////////////////////////
 
-.transparency_scroll_control_button {
-    height: 120%;
-    width: 2%;
-    background-color: black;
-    position: absolute;
-    
-}
 
-.transparency_scroll {
-    background-image: linear-gradient(45deg, #ccc 25%, transparent 25%),linear-gradient(-45deg, #ccc 25%, transparent 25%),linear-gradient(45deg, transparent 75%, #ccc 75%),linear-gradient(-45deg, transparent 75%, #ccc 75%);
-    background-size: 16px 16px;
-    background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
-    width:450px;
-    height: 32px;
-    margin-top: 20px;
-    position: relative;
-}
 

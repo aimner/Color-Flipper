@@ -1,0 +1,14 @@
+.color_scroll {
+    background: linear-gradient(to right, red 0%, #ff0 17%, lime 33%, cyan 50%, blue 66%, #f0f 83%, red 100%);
+    width:450px;
+    height: 7%;
+    margin-bottom: 20px;
+    position: relative;
+}
+.color_scroll_control_button {
+    height: 120%;
+    width: 2%;
+    background-color: black;
+    position: absolute;
+    
+}

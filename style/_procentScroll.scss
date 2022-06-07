@@ -1,0 +1,48 @@
+@mixin flex($flex-direcction, $justify-content, $align-items) {
+    flex-direction: $flex-direcction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+.procent_scroll_control_button {
+    height: 120%;
+    width: 2%;
+    background-color: black;
+    position: absolute;
+    border: 2px solid rgb(231, 77, 77);
+    border-radius: 15%;
+
+}
+
+.procent_scroll {
+    background: white;
+    width: 550px;
+    height: 32px;
+    margin-top: 20px;
+
+}
+
+.procent_scroll_control {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.procent_scroll_text {
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    .procent_scroll_text {
+          width: 5%;
+          position: absolute;
+          top: 8px;
+          left: -8.25px;
+          text-align: center;
+         
+    }
+
+}
+#procent_scroll_control_button_2 {
+    left: 100px;
+ }
