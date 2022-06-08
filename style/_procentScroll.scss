@@ -11,7 +11,12 @@
     position: absolute;
     border: 2px solid rgb(231, 77, 77);
     border-radius: 15%;
+    color: aliceblue;
+}
 
+.procent_scroll_control_button_active {
+    border: 2px solid rgb(95, 64, 233);
+    z-index: 10;
 }
 
 .procent_scroll {
@@ -28,21 +33,26 @@
     position: relative;
 }
 
-.procent_scroll_text {
+.procent_scroll_block_text {
     position: relative;
     height: 100%;
     width: 100%;
 
     .procent_scroll_text {
-          width: 5%;
-          position: absolute;
-          top: 8px;
-          left: -8.25px;
-          text-align: center;
-         
+        width: 5%;
+        position: absolute;
+        top: 8px;
+        left: -8.25px;
+        text-align: center;
+
     }
 
 }
+
 #procent_scroll_control_button_2 {
     left: 100px;
- }
+}
+
+#procent_scroll_text_2 {
+    left: 92px;
+}

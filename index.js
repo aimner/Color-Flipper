@@ -1,12 +1,19 @@
-import { scrollColorPanel, changeColorScroll, chooseColorClick, chooseColorMove } from "./modules/changeColorFunctionInScroll.js"
-import { scrollTransparencyPanel, changeTransparencyScroll } from "./modules/changeTransparency.js"
-import chooseDegree from "./modules/choseeDegree.js"
+import { scrollColorPanel, changeColorScroll, chooseColorClick, chooseColorMove } from "./modules/changeColorFunctionInScroll.js";
+import { scrollTransparencyPanel, changeTransparencyScroll } from "./modules/changeTransparency.js";
+import chooseDegree from "./modules/choseeDegree.js";
+import scrollProcentPanel from "./modules/changeProcentFunctionScroll.js";
 
-const colorScroll = document.querySelector('.color_scroll')
-const colorPanel = document.querySelector('.color_panel')
-const degreeCircle = document.querySelector('.degree_circle')
-const transparencyScroll = document.querySelector('.transparency_scroll')
-
+const colorScroll = document.querySelector('.color_scroll');
+const colorPanel = document.querySelector('.color_panel');
+const degreeCircle = document.querySelector('.degree_circle');
+const transparencyScroll = document.querySelector('.transparency_scroll');
+const procentScrollControlButtons = document.querySelectorAll('.procent_scroll_control_button');
+const procentScrollTextInputs = document.querySelectorAll('.procent_scroll_text')
+const procentScrollButtonsArr = [...procentScrollControlButtons];
+const procentScrollInputsArr = [...procentScrollTextInputs];
+const procentScrollBlockText = document.querySelector('.procent_scroll_block_text');
+const procentScroll = document.querySelector('.procent_scroll_control');
+const procentScrollText = document.getElementById('procent_scroll_text_1');
 
 
 
@@ -47,65 +54,78 @@ transparencyScroll.addEventListener('mousedown', scrollTransparencyPanel);
 
 
 
-// let rbgArr = ['166deg, rgba(69,255,0,1) 30%', 'rgba(42,137,208,1) 63%'];
-
-// let rgb = `linear-gradient(${rbgArr})`;
-
-// document.querySelector('.container').style.background = rgb;
-
-
-// console.log(rgb)
-
-//////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-const procentScroll = document.querySelector('.procent_scroll_control');
-const procentScrollControlButton = document.getElementById('procent_scroll_control_button_1');
-const procentScrollText = document.getElementById('procent_scroll_text_1')
-const procentScrollControlButtons = document.querySelectorAll('.procent_scroll_control_button')
-
-
-
-// procentScroll.addEventListener('mousedown', (event) => changeProcentScroll(event))
-
-procentScrollControlButtons.forEach(item => {
-    item.addEventListener('mousedown',() => scrollProcentPanel(item));
-})
-
-// procentScrollControlButton.addEventListener('mousedown', scrollProcentPanel);
-
-
-
-function scrollProcentPanel(item) {
-    item.addEventListener('mousemove', event => {
-        if (event.which === 1) {
-            let mouseСoordinatesProcentPanel = event.clientX - procentScroll.offsetLeft;
-            if (mouseСoordinatesProcentPanel >= 0 && mouseСoordinatesProcentPanel <= procentScroll.offsetWidth) {
-                // console.log(mouseСoordinatesProcentPanel)
-                // console.log(procentScroll.offsetWidth)
-                changeProcentScroll(event, item)
-            }
-        }
+function addEventForProcentScrollButtons(buttonsArr, inputsArr) {
+    buttonsArr.forEach(item => {
+        item.addEventListener('mousedown', (event) => {
+            scrollProcentPanel(item, inputsArr)
+        });
+        window.addEventListener('mouseup', (event) => {
+            item.classList.remove('procent_scroll_control_button_active')
+        });
+        item.addEventListener('click', (event) => {
+            event.stopPropagation()
+        });
     })
 }
 
-function changeProcentScroll(event, item) {
-    let mouseСoordinatesProcentPanel = event.clientX - procentScroll.offsetLeft;
-    item.style.left = `${mouseСoordinatesProcentPanel - (procentScrollControlButton.offsetWidth / 2)}px`;
-    // procentScrollText.style.left = `${mouseСoordinatesProcentPanel - (procentScrollControlButton.offsetWidth / 2) - (procentScrollText.offsetWidth / 2 - procentScrollControlButton.offsetWidth / 2)}px`;
-    // let transparency = (+procentScrollControlButton.style.left.split('').filter(item => !isNaN(+item) || item === '.').join('')).toFixed(0);
-    // // console.log(transparency);
-    // procentScrollText.value = (transparency * 100 / procentScroll.offsetWidth).toFixed(0)
+addEventForProcentScrollButtons(procentScrollControlButtons, procentScrollTextInputs)
 
-}
+
+procentScroll.addEventListener('click', (event) => {
+    let newButton = document.createElement('div');
+    procentScrollButtonsArr.push(newButton);
+    newButton.classList.add('procent_scroll_control_button');
+    newButton.id = `procent_scroll_control_button_${procentScrollButtonsArr.length}`;
+    newButton.setAttribute('data-number', `${procentScrollButtonsArr.length}`);
+    newButton.textContent = procentScrollButtonsArr.length;
+    procentScroll.append(newButton);
+    let mouseСoordinatesProcentPanel = event.clientX - procentScroll.offsetLeft;
+    newButton.style.left = `${mouseСoordinatesProcentPanel - newButton.offsetWidth / 2}px`;
+    procentScroll.append(newButton);
+
+    let newInput = document.createElement('input');
+    procentScrollInputsArr.push(newInput);
+    newInput.classList.add('procent_scroll_text');
+    newInput.id = `procent_scroll_text_${procentScrollButtonsArr.length}`;
+    newInput.setAttribute('data-number', `${procentScrollInputsArr.length}`);
+    procentScrollBlockText.append(newInput);
+    newInput.style.left = `${mouseСoordinatesProcentPanel - (newButton.offsetWidth / 2) - (procentScrollText.offsetWidth / 2 - newButton.offsetWidth / 2)}px`;
+    let transparency = (+newInput.style.left.split('').filter(item => !isNaN(+item) || item === '.').join('')).toFixed(0);
+    newInput.value = (transparency * 100 / procentScroll.offsetWidth).toFixed(0);
+
+    addEventForProcentScrollButtons(procentScrollButtonsArr, procentScrollInputsArr);
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
