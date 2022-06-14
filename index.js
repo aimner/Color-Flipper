@@ -1,8 +1,3 @@
-import { scrollColorPanel, changeColorScroll, chooseColorClick, chooseColorMove } from "./modules/changeColorFunctionInScroll.js";
-import { scrollTransparencyPanel, changeTransparencyScroll } from "./modules/changeTransparency.js";
-import chooseDegree from "./modules/choseeDegree.js";
-import scrollProcentPanel from "./modules/changeProcentFunctionScroll.js";
-
 const colorScroll = document.querySelector('.color_scroll');
 const colorPanel = document.querySelector('.color_panel');
 const degreeCircle = document.querySelector('.degree_circle');
@@ -18,25 +13,6 @@ const procentScrollText = document.getElementById('procent_scroll_text_1');
 
 
 
-// changeColor.addEventListener('click', () => {
-//     let firstNumber1 = Math.floor(Math.random() * 250)
-//     let secondNumber1 = Math.floor(Math.random() * 250)
-//     let thirdNumber1 = Math.floor(Math.random() * 250)
-//     let firstNumber2 = Math.floor(Math.random() * 250)
-//     let secondNumber2 = Math.floor(Math.random() * 250)
-//     let thirdNumber2 = Math.floor(Math.random() * 250)
-//     let firstNumber3 = Math.floor(Math.random() * 250)
-//     let secondNumber3 = Math.floor(Math.random() * 250)
-//     let thirdNumber3 = Math.floor(Math.random() * 250)
-//     let firstProcent = Math.floor(Math.random() * 100)
-//     let secondProcent = Math.floor(Math.random() * 100)
-//     let thirdProcent = Math.floor(Math.random() * 100)
-//     let degree = Math.floor(Math.random() * 360)
-//     container.style.background = `linear-gradient(${degree}deg, rgba(${firstNumber1},${secondNumber1},${thirdNumber1}) ${firstProcent}%, rgba(${firstNumber2},${secondNumber2},${thirdNumber2}) ${secondProcent}%,
-//     rgba(${firstNumber3},${secondNumber3},${thirdNumber3}) ${thirdProcent}%)`
-//     colorTitle.textContent = `linear-gradient (${degree}deg, rgba(${firstNumber1},${secondNumber1},${thirdNumber1}) ${firstProcent}%, rgba(${firstNumber2},${secondNumber2},${thirdNumber2}) ${secondProcent}%,
-//     rgba(${firstNumber3},${secondNumber3},${thirdNumber3}) ${thirdProcent}%)`
-// })
 
 colorScroll.addEventListener('mousedown', (event) => changeColorScroll(event))
 
@@ -57,14 +33,15 @@ transparencyScroll.addEventListener('mousedown', scrollTransparencyPanel);
 function addEventForProcentScrollButtons(buttonsArr, inputsArr) {
     buttonsArr.forEach(item => {
         item.addEventListener('mousedown', (event) => {
+            buttonsArr.forEach(item => item.classList.remove('procent_scroll_control_button_active'));
+           
             scrollProcentPanel(item, inputsArr)
         });
-        window.addEventListener('mouseup', (event) => {
-            item.classList.remove('procent_scroll_control_button_active')
-        });
+
         item.addEventListener('click', (event) => {
             event.stopPropagation()
         });
+
     })
 }
 
@@ -92,38 +69,48 @@ procentScroll.addEventListener('click', (event) => {
     newInput.style.left = `${mouseСoordinatesProcentPanel - (newButton.offsetWidth / 2) - (procentScrollText.offsetWidth / 2 - newButton.offsetWidth / 2)}px`;
     let transparency = (+newInput.style.left.split('').filter(item => !isNaN(+item) || item === '.').join('')).toFixed(0);
     newInput.value = (transparency * 100 / procentScroll.offsetWidth).toFixed(0);
-
     addEventForProcentScrollButtons(procentScrollButtonsArr, procentScrollInputsArr);
+    
+    let elem = buttonClass();
+    globalButtonsArr.push(new elem(procentScrollInputsArr.length))
+    console.log(globalButtonsArr);
 })
 
 
+function buttonClass() {
+   return class {
+        constructor(dataNumber, procent, coordinats1, coordinats2, coordinats3, transparency) {
+            this.dataNumber = dataNumber
+            this.procent = procent
+            this.coordinats1 = coordinats1
+            this.coordinats2 = coordinats2
+            this.coordinats3 = coordinats3
+            this.transparency = transparency
+        }
+        color() {
+            return `rgb(${this.coordinats1}, ${this.coordinats2}, ${this.coordinats3}, ${this.transparency}) ${this.procent}`
+        }
+    }
+}
+
+let globalButtonsArr = []
+
+for(let i = 1; i <= procentScrollInputsArr.length; i++) {
+    let elem = buttonClass()
+    if(i === 1) {
+        globalButtonsArr.push(new elem(i, 0, 255, 113, 113, 1))
+    } else {
+        globalButtonsArr.push(new elem(i, 0, 159, 8, 8, 1))
+    }
+    
+}
 
 
+// console.log(globalButtonsArr.reduce((firstItem, item) => firstItem + item))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// chooseFunctions2.choose1(colorPanel, globalButtonsArr[0].coordinats1, globalButtonsArr[0].coordinats3)
+// chooseFunctions2.choose2(colorPanel, globalButtonsArr[0].coordinats2, globalButtonsArr[0].coordinats3)
+// chooseFunctions2.choose3(colorPanel, globalButtonsArr[0].coordinats1, globalButtonsArr[0].coordinats2)
 
 
 

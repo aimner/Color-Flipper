@@ -1,8 +1,4 @@
-import gaps from "./gaps.js"
-import chooseFunctions from "./chooseClass.js"
 
-const colorScroll = document.querySelector('.color_scroll')
-const colorPanel = document.querySelector('.color_panel')
 const colorScrollControlButton = document.querySelector('.color_scroll_control_button')
 const colorPanelButton = document.querySelector('.color_panel_button')
 const colorTitle = document.querySelector('.color_title')
@@ -14,7 +10,6 @@ let rgbNumber = 0;
 
 
 function scrollColorPanel() {
-   
     colorScroll.addEventListener('mousemove', event => {
         if (event.which === 1) {
             let mouseСoordinatesColorPanel = event.clientX - colorScroll.offsetLeft;
@@ -39,26 +34,32 @@ function changeColorScroll(event) {
                 case 1:
                     colorPanel.style.background = `rgb(255, ${rgbNumber}, 0)`;
                     chooseFunctions.choose1(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb)
+                    chooseFunctions2.choose1(colorPanel, globalButtonsArr[0].coordinats1, globalButtonsArr[0].coordinats3)
                     break;
                 case 2:
                     colorPanel.style.background = `rgb(${255 - rgbNumber}, 255, 0)`;
                     chooseFunctions.choose2(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb)
+                    chooseFunctions2.choose2(colorPanel, globalButtonsArr[0].coordinats2, globalButtonsArr[0].coordinats3)
                     break;
                 case 3:
                     colorPanel.style.background = `rgb(0, 255, ${rgbNumber})`;
                     chooseFunctions.choose3(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb)
+                    chooseFunctions2.choose3(colorPanel, globalButtonsArr[0].coordinats1, globalButtonsArr[0].coordinats2)
                     break;
                 case 4:
                     colorPanel.style.background = `rgb(0, ${255 - rgbNumber}, 255)`;
                     chooseFunctions.choose4(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb)
+                    chooseFunctions2.choose4(colorPanel, globalButtonsArr[0].coordinats1, globalButtonsArr[0].coordinats3)
                     break;
                 case 5:
                     colorPanel.style.background = `rgb(${rgbNumber}, 0, 255)`;
                     chooseFunctions.choose5(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb)
+                    chooseFunctions2.choose5(colorPanel, globalButtonsArr[0].coordinats2, globalButtonsArr[0].coordinats3)
                     break;
                 case 6:
                     colorPanel.style.background = `rgb(255, 0, ${255 - rgbNumber})`;
                     chooseFunctions.choose6(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb)
+                    chooseFunctions2.choose6(colorPanel, globalButtonsArr[0].coordinats1, globalButtonsArr[0].coordinats2)
                     break;
                 default:
                     break;
@@ -121,4 +122,3 @@ function chooseColorMove() {
 }
 
 
-export { scrollColorPanel, changeColorScroll, chooseColorClick, chooseColorMove}

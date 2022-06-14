@@ -1,6 +1,6 @@
 const degreeControlCircle = document.querySelector('.degree_control_circle');
 const degreePanelText = document.querySelector('.degree_panel_text');
-const degreeCircle = document.querySelector('.degree_circle');
+
 
 function chooseDegree(event) {
     let mouseCorrdinatX = event.clientX - degreeCircle.offsetLeft;
@@ -28,4 +28,3 @@ function chooseDegree(event) {
 }
 
 
-export default chooseDegree

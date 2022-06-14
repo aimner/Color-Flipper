@@ -1,4 +1,4 @@
-const transparencyScroll = document.querySelector('.transparency_scroll')
+
 const transparencyScrollControlButton = document.querySelector('.transparency_scroll_control_button')
 
 function scrollTransparencyPanel() {
@@ -20,4 +20,3 @@ function changeTransparencyScroll(event) {
 }
 
 
-export {scrollTransparencyPanel, changeTransparencyScroll}

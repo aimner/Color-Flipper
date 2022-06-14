@@ -1,5 +1,4 @@
 let gaps = []
-const colorScroll = document.querySelector('.color_scroll')
 
 function createGapsArr() {
     for (let i = 0; i <= 6; i++) {
@@ -10,6 +9,6 @@ function createGapsArr() {
         }
     }
 }
+
 createGapsArr()
 
-export default gaps
