@@ -34,7 +34,7 @@ function addEventForProcentScrollButtons(buttonsArr, inputsArr) {
     buttonsArr.forEach(item => {
         item.addEventListener('mousedown', (event) => {
             buttonsArr.forEach(item => item.classList.remove('procent_scroll_control_button_active'));
-           
+
             scrollProcentPanel(item, inputsArr)
         });
 
@@ -70,7 +70,7 @@ procentScroll.addEventListener('click', (event) => {
     let transparency = (+newInput.style.left.split('').filter(item => !isNaN(+item) || item === '.').join('')).toFixed(0);
     newInput.value = (transparency * 100 / procentScroll.offsetWidth).toFixed(0);
     addEventForProcentScrollButtons(procentScrollButtonsArr, procentScrollInputsArr);
-    
+
     let elem = buttonClass();
     globalButtonsArr.push(new elem(procentScrollInputsArr.length))
     console.log(globalButtonsArr);
@@ -78,31 +78,45 @@ procentScroll.addEventListener('click', (event) => {
 
 
 function buttonClass() {
-   return class {
-        constructor(dataNumber, procent, coordinats1, coordinats2, coordinats3, transparency) {
+    return class {
+        constructor(dataNumber, procent, coordinats1, coordinats2, coordinats3, transparency, colorScrollButtonCoordinats) {
             this.dataNumber = dataNumber
             this.procent = procent
             this.coordinats1 = coordinats1
             this.coordinats2 = coordinats2
             this.coordinats3 = coordinats3
             this.transparency = transparency
+            this.colorScrollButtonCoordinats = colorScrollButtonCoordinats
+            this.colorPanelBackgroundColor = null
+            this.controlPointGaps = 1;
+            this.active = false
         }
         color() {
-            return `rgb(${this.coordinats1}, ${this.coordinats2}, ${this.coordinats3}, ${this.transparency}) ${this.procent}`
+            
+            let background = ` linear-gradient(${degreePanelText.value}deg,`
+            for (let i = 0; i < globalButtonsArr.length; i++) {
+                if (globalButtonsArr[i] === globalButtonsArr.at(-1)) {
+                    background += ` rgba(${globalButtonsArr[i].coordinats1.toFixed(0)}, ${globalButtonsArr[i].coordinats2.toFixed(0)}, ${globalButtonsArr[i].coordinats3.toFixed(0)}, ${globalButtonsArr[i].transparency}) ${globalButtonsArr[i].procent}%)`
+                } else {
+                    background += ` rgba(${globalButtonsArr[i].coordinats1.toFixed(0)}, ${globalButtonsArr[i].coordinats2.toFixed(0)}, ${globalButtonsArr[i].coordinats3.toFixed(0)}, ${globalButtonsArr[i].transparency}) ${globalButtonsArr[i].procent}%,`
+                }
+            }
+            // console.log(background)
+            console.log(globalButtonsArr)
+            console.log(colorScrollControlButton.style.left)
+            // debugger
+            return background
         }
     }
 }
 
 let globalButtonsArr = []
 
-for(let i = 1; i <= procentScrollInputsArr.length; i++) {
+for (let i = 1; i <= procentScrollInputsArr.length; i++) {
     let elem = buttonClass()
-    if(i === 1) {
-        globalButtonsArr.push(new elem(i, 0, 255, 113, 113, 1))
-    } else {
-        globalButtonsArr.push(new elem(i, 0, 159, 8, 8, 1))
-    }
-    
+    globalButtonsArr.push(new elem(i, 50, 255, 255, 255, 1, 0))
+
+
 }
 
 
@@ -111,7 +125,6 @@ for(let i = 1; i <= procentScrollInputsArr.length; i++) {
 // chooseFunctions2.choose1(colorPanel, globalButtonsArr[0].coordinats1, globalButtonsArr[0].coordinats3)
 // chooseFunctions2.choose2(colorPanel, globalButtonsArr[0].coordinats2, globalButtonsArr[0].coordinats3)
 // chooseFunctions2.choose3(colorPanel, globalButtonsArr[0].coordinats1, globalButtonsArr[0].coordinats2)
-
 
 
 

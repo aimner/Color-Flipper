@@ -5,7 +5,11 @@ class ChooseFunction {
         let coordinats2Y = (colorPanel.offsetHeight - colorPanelButtonCoordinatsY) * coordinats2X / colorPanel.offsetHeight;
         let coordinats3X = 255 - (colorPanelButtonCoordinatsX * 255 / (colorPanel.offsetWidth));
         let coordinats3Y = (colorPanel.offsetHeight - colorPanelButtonCoordinatsY) * coordinats3X / colorPanel.offsetHeight;
-        colorTitle.style.background = `rgb(${coordinats1}, ${coordinats2Y}, ${coordinats3Y})`;
+        let elem = globalButtonsArr.find(item => item.active === true) // ищем нужный объект в массиве кнопок цветов, и переписываем у него координаты
+        elem.coordinats1 = coordinats1
+        elem.coordinats2 = coordinats2Y
+        elem.coordinats3 = coordinats3Y
+        colorTitle.style.background = elem.color();
         transparencyScrollRgb.style.background = `linear-gradient(to right, rgb(${coordinats1}, ${coordinats2Y}, ${coordinats3Y}) 0%, rgba(${coordinats1}, ${coordinats2Y}, ${coordinats3Y}, 0) 100%)`
     }
 
@@ -15,7 +19,11 @@ class ChooseFunction {
         let coordinats1Y = (colorPanel.offsetHeight - colorPanelButtonCoordinatsY) * coordinats1X / colorPanel.offsetHeight;
         let coordinats3X = 255 - (colorPanelButtonCoordinatsX * 255 / (colorPanel.offsetWidth));
         let coordinats3Y = (colorPanel.offsetHeight - colorPanelButtonCoordinatsY) * coordinats3X / colorPanel.offsetHeight;
-        colorTitle.style.background = `rgb(${coordinats1Y}, ${coordinats2}, ${coordinats3Y})`;
+        let elem = globalButtonsArr.find(item => item.active === true) // ищем нужный объект в массиве кнопок цветов, и переписываем у него координаты
+        elem.coordinats1 = coordinats1Y
+        elem.coordinats2 = coordinats2
+        elem.coordinats3 = coordinats3Y
+        colorTitle.style.background = elem.color();
         transparencyScrollRgb.style.background = `linear-gradient(to right, rgb(${coordinats1Y}, ${coordinats2}, ${coordinats3Y}) 0%, rgba(${coordinats1Y}, ${coordinats2}, ${coordinats3Y}, 0) 100%)`
     }
 
@@ -25,7 +33,11 @@ class ChooseFunction {
         let coordinats3Y = (colorPanel.offsetHeight - colorPanelButtonCoordinatsY) * coordinats3X / colorPanel.offsetHeight;
         let coordinats1X = 255 - (colorPanelButtonCoordinatsX * 255 / (colorPanel.offsetWidth));
         let coordinats1Y = (colorPanel.offsetHeight - colorPanelButtonCoordinatsY) * coordinats1X / colorPanel.offsetHeight;
-        colorTitle.style.background = `rgb(${coordinats1Y}, ${coordinats2}, ${coordinats3Y})`;
+        let elem = globalButtonsArr.find(item => item.active === true) // ищем нужный объект в массиве кнопок цветов, и переписываем у него координаты
+        elem.coordinats1 = coordinats1Y
+        elem.coordinats2 = coordinats2
+        elem.coordinats3 = coordinats3Y
+        colorTitle.style.background = elem.color();
         transparencyScrollRgb.style.background = `linear-gradient(to right, rgb(${coordinats1Y}, ${coordinats2}, ${coordinats3Y}) 0%, rgba(${coordinats1Y}, ${coordinats2}, ${coordinats3Y}, 0) 100%)`
     }
 
@@ -35,7 +47,11 @@ class ChooseFunction {
         let coordinats2Y = (colorPanel.offsetHeight - colorPanelButtonCoordinatsY) * coordinats2X / colorPanel.offsetHeight;
         let coordinats1X = 255 - (colorPanelButtonCoordinatsX * 255 / (colorPanel.offsetWidth));
         let coordinats1Y = (colorPanel.offsetHeight - colorPanelButtonCoordinatsY) * coordinats1X / colorPanel.offsetHeight;
-        colorTitle.style.background = `rgb(${coordinats1Y}, ${coordinats2Y}, ${coordinats3})`;
+        let elem = globalButtonsArr.find(item => item.active === true) // ищем нужный объект в массиве кнопок цветов, и переписываем у него координаты
+        elem.coordinats1 = coordinats1Y
+        elem.coordinats2 = coordinats2Y
+        elem.coordinats3 = coordinats3
+        colorTitle.style.background = elem.color();
         transparencyScrollRgb.style.background = `linear-gradient(to right, rgb(${coordinats1Y}, ${coordinats2Y}, ${coordinats3}) 0%, rgba(${coordinats1Y}, ${coordinats2Y}, ${coordinats3}, 0) 100%)`
     }
 
@@ -45,7 +61,11 @@ class ChooseFunction {
         let coordinats1Y = (colorPanel.offsetHeight - colorPanelButtonCoordinatsY) * coordinats1X / colorPanel.offsetHeight;
         let coordinats2X = 255 - (colorPanelButtonCoordinatsX * 255 / (colorPanel.offsetWidth));
         let coordinats2Y = (colorPanel.offsetHeight - colorPanelButtonCoordinatsY) * coordinats2X / colorPanel.offsetHeight;
-        colorTitle.style.background = `rgb(${coordinats1Y}, ${coordinats2Y}, ${coordinats3})`;
+        let elem = globalButtonsArr.find(item => item.active === true) // ищем нужный объект в массиве кнопок цветов, и переписываем у него координаты
+        elem.coordinats1 = coordinats1Y
+        elem.coordinats2 = coordinats2Y
+        elem.coordinats3 = coordinats3
+        colorTitle.style.background = elem.color();
         transparencyScrollRgb.style.background = `linear-gradient(to right, rgb(${coordinats1Y}, ${coordinats2Y}, ${coordinats3}) 0%, rgba(${coordinats1Y}, ${coordinats2Y}, ${coordinats3}, 0) 100%)`
     }
 
@@ -55,7 +75,11 @@ class ChooseFunction {
         let coordinats3Y = (colorPanel.offsetHeight - colorPanelButtonCoordinatsY) * coordinats3X / colorPanel.offsetHeight;
         let coordinats2X = 255 - (colorPanelButtonCoordinatsX * 255 / (colorPanel.offsetWidth));
         let coordinats2Y = (colorPanel.offsetHeight - colorPanelButtonCoordinatsY) * coordinats2X / colorPanel.offsetHeight;
-        colorTitle.style.background = `rgb(${coordinats1}, ${coordinats2Y}, ${coordinats3Y})`;
+        let elem = globalButtonsArr.find(item => item.active === true) // ищем нужный объект в массиве кнопок цветов, и переписываем у него координаты
+        elem.coordinats1 = coordinats1
+        elem.coordinats2 = coordinats2Y
+        elem.coordinats3 = coordinats3Y
+        colorTitle.style.background = elem.color();
         transparencyScrollRgb.style.background = `linear-gradient(to right, rgb(${coordinats1}, ${coordinats2Y}, ${coordinats3Y}) 0%, rgba(${coordinats1}, ${coordinats2Y}, ${coordinats3Y}, 0) 100%)`
     }
 }
@@ -64,109 +88,64 @@ class ChooseFunction {
 let chooseFunctions = new ChooseFunction();
 
 class ChooseFunction2 {
-    choose1(colorPanel, c1, c2, c3) {
-        // let coordinats1 = 255 - (colorPanelButtonCoordinatsY * 255 / colorPanel.offsetHeight);
-        // let coordinats2X = 255 - (colorPanelButtonCoordinatsX * (255 - rgbNumber) / colorPanel.offsetWidth);
-        // let coordinats2Y = (colorPanel.offsetHeight - colorPanelButtonCoordinatsY) * coordinats2X / colorPanel.offsetHeight;
-        // let coordinats3X = 255 - (colorPanelButtonCoordinatsX * 255 / colorPanel.offsetWidth);
-        // let coordinats3Y = (colorPanel.offsetHeight - colorPanelButtonCoordinatsY) * coordinats3X / colorPanel.offsetHeight;
+    choose1(colorPanel, elem) {
+        let c1Y = ((255 - elem.coordinats1) * colorPanel.offsetHeight) / 255;
+        let coordinats3X = ((elem.coordinats3 * colorPanel.offsetHeight) / (colorPanel.offsetHeight - c1Y))
+        let c3X = ((255 - coordinats3X) * colorPanel.offsetWidth) / 255;
+        console.log('choose1')
+        this.changeColorMetod(c3X, c1Y, elem)
         
-        let c1Y = ((255 - c1) * colorPanel.offsetHeight) / 255;
-        let coordinats3X = ((c3 * colorPanel.offsetHeight) / (colorPanel.offsetHeight - c1Y))
+    }
+
+    choose2(colorPanel, elem) {
+        let c2Y = ((255 - elem.coordinats2) * colorPanel.offsetHeight) / 255;
+        let coordinats3X = ((elem.coordinats3 * colorPanel.offsetHeight) / (colorPanel.offsetHeight - c2Y))
         let c3X = ((255 - coordinats3X) * colorPanel.offsetWidth) / 255;
-   
-        colorPanelButton.style.left = `${c3X - colorPanelButton.offsetWidth / 2}px`;
-        colorPanelButton.style.top = `${c1Y - colorPanelButton.offsetHeight / 2}px`;
-        colorTitle.style.background = `rgb(${c1}, ${c2}, ${c3})`;
-        //c1Y === colorPanelButtonCoordinatsY
-        //c3X === colorPanelButtonCoordinatsX
-        // colorTitle.style.background = `rgb(${coordinats1}, ${coordinats2Y}, ${coordinats3Y})`;
-        // transparencyScrollRgb.style.background = `linear-gradient(to right, rgb(${coordinats1}, ${coordinats2Y}, ${coordinats3Y}) 0%, rgba(${coordinats1}, ${coordinats2Y}, ${coordinats3Y}, 0) 100%)`
+        console.log('choose2')
+        this.changeColorMetod(c3X, c2Y, elem)
     }
 
-    choose2(colorPanel, c1, c2, c3) {
-        // let coordinats2 = 255 - (colorPanelButtonCoordinatsY * 255 / colorPanel.offsetHeight);
-        // let coordinats1X = 255 - ((colorPanelButtonCoordinatsX * rgbNumber) / colorPanel.offsetWidth);
-        // let coordinats1Y = (colorPanel.offsetHeight - colorPanelButtonCoordinatsY) * coordinats1X / colorPanel.offsetHeight;
-        // let coordinats3X = 255 - (colorPanelButtonCoordinatsX * 255 / (colorPanel.offsetWidth));
-        // let coordinats3Y = (colorPanel.offsetHeight - colorPanelButtonCoordinatsY) * coordinats3X / colorPanel.offsetHeight;
-        // colorTitle.style.background = `rgb(${coordinats1Y}, ${coordinats2}, ${coordinats3Y})`;
-        // transparencyScrollRgb.style.background = `linear-gradient(to right, rgb(${coordinats1Y}, ${coordinats2}, ${coordinats3Y}) 0%, rgba(${coordinats1Y}, ${coordinats2}, ${coordinats3Y}, 0) 100%)`
-        let c2Y = ((255 - c2) * colorPanel.offsetHeight) / 255;
-        let coordinats3X = ((c3 * colorPanel.offsetHeight) / (colorPanel.offsetHeight - c2Y))
-        let c3X = ((255 - coordinats3X) * colorPanel.offsetWidth) / 255;
-     
-        colorPanelButton.style.left = `${c3X - colorPanelButton.offsetWidth / 2}px`;
-        colorPanelButton.style.top = `${c2Y - colorPanelButton.offsetHeight / 2}px`;
-        colorTitle.style.background = `rgb(${c1}, ${c2}, ${c3})`;
-    }
-
-    choose3(colorPanel, c1, c2, c3) {
-        // let coordinats2 = 255 - (colorPanelButtonCoordinatsY * 255 / colorPanel.offsetHeight);
-        // let coordinats3X = 255 - ((colorPanelButtonCoordinatsX * (255 - rgbNumber)) / colorPanel.offsetWidth);
-        // let coordinats3Y = (colorPanel.offsetHeight - colorPanelButtonCoordinatsY) * coordinats3X / colorPanel.offsetHeight;
-        // let coordinats1X = 255 - (colorPanelButtonCoordinatsX * 255 / (colorPanel.offsetWidth));
-        // let coordinats1Y = (colorPanel.offsetHeight - colorPanelButtonCoordinatsY) * coordinats1X / colorPanel.offsetHeight;
-        // colorTitle.style.background = `rgb(${coordinats1Y}, ${coordinats2}, ${coordinats3Y})`;
-        // transparencyScrollRgb.style.background = `linear-gradient(to right, rgb(${coordinats1Y}, ${coordinats2}, ${coordinats3Y}) 0%, rgba(${coordinats1Y}, ${coordinats2}, ${coordinats3Y}, 0) 100%)`
-        let c2Y = ((255 - c2) * colorPanel.offsetHeight) / 255;
-        let coordinats1X = ((c1 * colorPanel.offsetHeight) / (colorPanel.offsetHeight - c2Y))
+    choose3(colorPanel, elem) {
+        let c2Y = ((255 - elem.coordinats2) * colorPanel.offsetHeight) / 255;
+        let coordinats1X = ((elem.coordinats1 * colorPanel.offsetHeight) / (colorPanel.offsetHeight - c2Y))
         let c1X = ((255 - coordinats1X) * colorPanel.offsetWidth) / 255;
-    
-        colorPanelButton.style.left = `${c1X - colorPanelButton.offsetWidth / 2}px`;
-        colorPanelButton.style.top = `${c2Y - colorPanelButton.offsetHeight / 2}px`;
-        colorTitle.style.background = `rgb(${c1}, ${c2}, ${c3})`;
+        console.log('choose3')
+        this.changeColorMetod(c1X, c2Y, elem)
     }
 
-    choose4(colorPanel, c1, c2, c3) {
-        // let coordinats3 = 255 - (colorPanelButtonCoordinatsY * 255 / colorPanel.offsetHeight);
-        // let coordinats2X = 255 - ((colorPanelButtonCoordinatsX * rgbNumber) / colorPanel.offsetWidth);
-        // let coordinats2Y = (colorPanel.offsetHeight - colorPanelButtonCoordinatsY) * coordinats2X / colorPanel.offsetHeight;
-        // let coordinats1X = 255 - (colorPanelButtonCoordinatsX * 255 / (colorPanel.offsetWidth));
-        // let coordinats1Y = (colorPanel.offsetHeight - colorPanelButtonCoordinatsY) * coordinats1X / colorPanel.offsetHeight;
-        // colorTitle.style.background = `rgb(${coordinats1Y}, ${coordinats2Y}, ${coordinats3})`;
-        // transparencyScrollRgb.style.background = `linear-gradient(to right, rgb(${coordinats1Y}, ${coordinats2Y}, ${coordinats3}) 0%, rgba(${coordinats1Y}, ${coordinats2Y}, ${coordinats3}, 0) 100%)`
-        let c3Y = ((255 - c3) * colorPanel.offsetHeight) / 255;
-        let coordinats1X = ((c1 * colorPanel.offsetHeight) / (colorPanel.offsetHeight - c3Y))
+    choose4(colorPanel, elem) {
+        let c3Y = ((255 - elem.coordinats3) * colorPanel.offsetHeight) / 255;
+        let coordinats1X = ((elem.coordinats1 * colorPanel.offsetHeight) / (colorPanel.offsetHeight - c3Y))
         let c1X = ((255 - coordinats1X) * colorPanel.offsetWidth) / 255;
-       
-        colorPanelButton.style.left = `${c1X - colorPanelButton.offsetWidth / 2}px`;
-        colorPanelButton.style.top = `${c3Y - colorPanelButton.offsetHeight / 2}px`;
-        colorTitle.style.background = `rgb(${c1}, ${c2}, ${c3})`;
+        console.log('choose4')
+        this.changeColorMetod(c1X, c3Y, elem)
     }
 
-    choose5(colorPanel, c1, c2, c3) {
-        // let coordinats3 = 255 - (colorPanelButtonCoordinatsY * 255 / colorPanel.offsetHeight);
-        // let coordinats1X = 255 - ((colorPanelButtonCoordinatsX * (255 - rgbNumber)) / colorPanel.offsetWidth);
-        // let coordinats1Y = (colorPanel.offsetHeight - colorPanelButtonCoordinatsY) * coordinats1X / colorPanel.offsetHeight;
-        // let coordinats2X = 255 - (colorPanelButtonCoordinatsX * 255 / (colorPanel.offsetWidth));
-        // let coordinats2Y = (colorPanel.offsetHeight - colorPanelButtonCoordinatsY) * coordinats2X / colorPanel.offsetHeight;
-        // colorTitle.style.background = `rgb(${coordinats1Y}, ${coordinats2Y}, ${coordinats3})`;
-        // transparencyScrollRgb.style.background = `linear-gradient(to right, rgb(${coordinats1Y}, ${coordinats2Y}, ${coordinats3}) 0%, rgba(${coordinats1Y}, ${coordinats2Y}, ${coordinats3}, 0) 100%)`
-        let c3Y = ((255 - c3) * colorPanel.offsetHeight) / 255;
-        let coordinats2X = ((c2 * colorPanel.offsetHeight) / (colorPanel.offsetHeight - c3Y))
+    choose5(colorPanel, elem) {
+        let c3Y = ((255 - elem.coordinats3) * colorPanel.offsetHeight) / 255;
+        let coordinats2X = ((elem.coordinats2 * colorPanel.offsetHeight) / (colorPanel.offsetHeight - c3Y))
         let c2X = ((255 - coordinats2X) * colorPanel.offsetWidth) / 255;
-       
-        colorPanelButton.style.left = `${c2X - colorPanelButton.offsetWidth / 2}px`;
-        colorPanelButton.style.top = `${c3Y - colorPanelButton.offsetHeight / 2}px`;
-        colorTitle.style.background = `rgb(${c1}, ${c2}, ${c3})`;
+        console.log('choose5')
+        this.changeColorMetod(c2X, c3Y, elem)
     }
 
-    choose6(colorPanel, c1, c2, c3) {
-        // let coordinats1 = 255 - (colorPanelButtonCoordinatsY * 255 / colorPanel.offsetHeight);
-        // let coordinats3X = 255 - ((colorPanelButtonCoordinatsX * rgbNumber) / colorPanel.offsetWidth);
-        // let coordinats3Y = (colorPanel.offsetHeight - colorPanelButtonCoordinatsY) * coordinats3X / colorPanel.offsetHeight;
-        // let coordinats2X = 255 - (colorPanelButtonCoordinatsX * 255 / (colorPanel.offsetWidth));
-        // let coordinats2Y = (colorPanel.offsetHeight - colorPanelButtonCoordinatsY) * coordinats2X / colorPanel.offsetHeight;
-        // colorTitle.style.background = `rgb(${coordinats1}, ${coordinats2Y}, ${coordinats3Y})`;
-        // transparencyScrollRgb.style.background = `linear-gradient(to right, rgb(${coordinats1}, ${coordinats2Y}, ${coordinats3Y}) 0%, rgba(${coordinats1}, ${coordinats2Y}, ${coordinats3Y}, 0) 100%)`
-        let c1Y = ((255 - c1) * colorPanel.offsetHeight) / 255;
-        let coordinats2X = ((c2 * colorPanel.offsetHeight) / (colorPanel.offsetHeight - c1Y))
+    choose6(colorPanel, elem) {
+        let c1Y = ((255 - elem.coordinats1) * colorPanel.offsetHeight) / 255;
+        let coordinats2X = ((elem.coordinats2 * colorPanel.offsetHeight) / (colorPanel.offsetHeight - c1Y))
         let c2X = ((255 - coordinats2X) * colorPanel.offsetWidth) / 255;
+        console.log('choose6')
+        this.changeColorMetod(c2X, c1Y, elem)
+    }
+
+    changeColorMetod(X, Y, elem) {
+        colorPanelButton.style.left = `${X - colorPanelButton.offsetWidth / 2}px`;
+        colorPanelButton.style.top = `${Y - colorPanelButton.offsetHeight / 2}px`;
+        colorTitle.style.background = elem.color();
+        colorScrollControlButton.style.left = `${elem.colorScrollButtonCoordinats}px`;
      
-        colorPanelButton.style.left = `${c2X - colorPanelButton.offsetWidth / 2}px`;
-        colorPanelButton.style.top = `${c1Y - colorPanelButton.offsetHeight / 2}px`;
-        colorTitle.style.background = `rgb(${c1}, ${c2}, ${c3})`;
+        colorPanel.style.background =  elem.colorPanelBackgroundColor;
+        transparencyScrollRgb.style.background = `linear-gradient(to right, rgb(${elem.coordinats1}, ${elem.coordinats2}, ${elem.coordinats3}) 0%, rgba(${elem.coordinats1}, ${elem.coordinats2}, ${elem.coordinats3}, 0) 100%)`
+        transparencyScrollControlButton.style.left = `${elem.transparency * transparencyScroll.offsetWidth}px`
     }
 }
 

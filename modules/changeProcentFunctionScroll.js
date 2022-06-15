@@ -6,55 +6,53 @@ const procentScrollControlButton = document.getElementById('procent_scroll_contr
 function scrollProcentPanel(item, inputsArr) {
     item.classList.add('procent_scroll_control_button_active')
     globalButtonsArr.forEach(elem => {
+        elem.active = false;
         if (elem.dataNumber == item.dataset.number) {
-            console.log(elem)
-            let gapIndex = (+colorScrollControlButton.style.left.split('').filter(item => !isNaN(+item) || item === '.').join('')).toFixed(2);
-            for (let i = 1; i <= 6; i++) {
-                if (gapIndex <= gaps[i] && gapIndex >= gaps[i - 1]) {
-                    controlPointGaps = gaps.indexOf(gaps[i])
-                    switch (controlPointGaps) {
+            elem.active = true;
+          
+                    switch (elem.controlPointGaps) {
                         case 1:
                             // colorPanel.style.background = `rgb(255, ${rgbNumber}, 0)`;
                             // chooseFunctions.choose1(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb)
-                            chooseFunctions2.choose1(colorPanel, elem.coordinats1, elem.coordinats2, elem.coordinats3)
+                            chooseFunctions2.choose1(colorPanel, elem)
                             console.log('1')
 
                             break;
                         case 2:
                             // colorPanel.style.background = `rgb(${255 - rgbNumber}, 255, 0)`;
                             // chooseFunctions.choose2(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb)
-                            chooseFunctions2.choose2(colorPanel, elem.coordinats1, elem.coordinats2, elem.coordinats3)
+                            chooseFunctions2.choose2(colorPanel, elem)
                             console.log('2')
                             break;
                         case 3:
                             // colorPanel.style.background = `rgb(0, 255, ${rgbNumber})`;
                             // chooseFunctions.choose3(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb)
-                            chooseFunctions2.choose3(colorPanel, elem.coordinats1, elem.coordinats2, elem.coordinats3)
+                            chooseFunctions2.choose3(colorPanel, elem)
                             console.log('3')
                             break;
                         case 4:
                             // colorPanel.style.background = `rgb(0, ${255 - rgbNumber}, 255)`;
                             // chooseFunctions.choose4(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb)
-                            chooseFunctions2.choose4(colorPanel, elem.coordinats1, elem.coordinats2, elem.coordinats3)
+                            chooseFunctions2.choose4(colorPanel, elem)
                             console.log('4')
                             break;
                         case 5:
                             // colorPanel.style.background = `rgb(${rgbNumber}, 0, 255)`;
                             // chooseFunctions.choose5(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb)
-                            chooseFunctions2.choose5(colorPanel, elem.coordinats1, elem.coordinats2, elem.coordinats3)
+                            chooseFunctions2.choose5(colorPanel, elem)
                             console.log('5')
                             break;
                         case 6:
                             // colorPanel.style.background = `rgb(255, 0, ${255 - rgbNumber})`;
                             // chooseFunctions.choose6(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb)
-                            chooseFunctions2.choose6(colorPanel, elem.coordinats1, elem.coordinats2, elem.coordinats3)
+                            chooseFunctions2.choose6(colorPanel, elem)
                             console.log('6')
                             break;
                         default:
                             break;
                     }
-                }
-            }
+                
+            
 
         }
     })
