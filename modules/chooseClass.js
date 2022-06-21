@@ -11,6 +11,7 @@ class ChooseFunction {
         elem.coordinats3 = coordinats3Y
         colorTitle.style.background = elem.color();
         transparencyScrollRgb.style.background = `linear-gradient(to right, rgb(${coordinats1}, ${coordinats2Y}, ${coordinats3Y}) 0%, rgba(${coordinats1}, ${coordinats2Y}, ${coordinats3Y}, 0) 100%)`
+        // debugger
     }
 
     choose2(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb) {
@@ -142,10 +143,11 @@ class ChooseFunction2 {
         colorPanelButton.style.top = `${Y - colorPanelButton.offsetHeight / 2}px`;
         colorTitle.style.background = elem.color();
         colorScrollControlButton.style.left = `${elem.colorScrollButtonCoordinats}px`;
-     
+        rgbNumber = elem.rgbNumber
         colorPanel.style.background =  elem.colorPanelBackgroundColor;
         transparencyScrollRgb.style.background = `linear-gradient(to right, rgb(${elem.coordinats1}, ${elem.coordinats2}, ${elem.coordinats3}) 0%, rgba(${elem.coordinats1}, ${elem.coordinats2}, ${elem.coordinats3}, 0) 100%)`
         transparencyScrollControlButton.style.left = `${elem.transparency * transparencyScroll.offsetWidth}px`
+        // debugger
     }
 }
 

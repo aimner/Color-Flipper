@@ -26,7 +26,7 @@
 
 .color_title {
   width: 70%;
-  height: 20%;
+  height: 40%;
   background-color: antiquewhite;
   margin-bottom: 5%;
   display: -webkit-box;
@@ -295,5 +295,32 @@
   width: 2%;
   background-color: black;
   position: absolute;
+}
+
+.colors_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #423f3c;
+  width: 30%;
+  height: 100%;
+  overflow: auto;
+}
+
+.colors_block_element {
+  width: 70%;
+  min-height: 30px;
+  background-color: #dbcccc;
+  margin-bottom: 10px;
 }
 /*# sourceMappingURL=style.css.map */

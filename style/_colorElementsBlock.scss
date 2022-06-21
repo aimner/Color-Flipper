@@ -1,0 +1,22 @@
+@mixin flex($flex-direcction, $justify-content, $align-items) {
+    flex-direction: $flex-direcction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+.colors_block {
+    display: flex;
+    @include flex(column, flex-start, center);
+    background-color:rgb(66, 63, 60);
+    width: 30%;
+    height: 100%;
+    overflow: auto;
+}
+
+.colors_block_element {
+      width: 70%;
+      min-height: 30px;
+      background-color: rgb(219, 204, 204);
+      margin-bottom: 10px;
+}
+
