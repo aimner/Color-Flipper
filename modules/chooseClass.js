@@ -82,6 +82,7 @@ class ChooseFunction {
         elem.coordinats3 = coordinats3Y
         colorTitle.style.background = elem.color();
         transparencyScrollRgb.style.background = `linear-gradient(to right, rgb(${coordinats1}, ${coordinats2Y}, ${coordinats3Y}) 0%, rgba(${coordinats1}, ${coordinats2Y}, ${coordinats3Y}, 0) 100%)`
+        
     }
 }
 
