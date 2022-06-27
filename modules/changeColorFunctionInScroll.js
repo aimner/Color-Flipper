@@ -36,6 +36,7 @@ function changeColorScroll(event) {
             
             switch (controlPointGaps) {
                 case 1:
+                   
                     colorPanel.style.background = `rgb(255, ${rgbNumber}, 0)`;
                     changeGlobalButtonsArrItem()
                     chooseFunctions.choose1(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb)

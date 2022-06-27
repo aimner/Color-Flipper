@@ -68,6 +68,7 @@ function changeProcentScroll(event, item, inputsArr) {
             let elem = globalButtonsArr.find(item => item.active === true);
             elem.procent = input.value;
             colorTitle.style.background = elem.color();
+            procentScroll.style.background = elem.colorProcentScroll();
         }
     })
 }
@@ -77,11 +78,8 @@ function changeProcentScroll(event, item, inputsArr) {
 
 function changeButtonsElement(event) {
     if(event.target.classList.contains('colors_block_choose_button')) {
-
         procentScrollButtonsArr.forEach(item => item.classList.remove('procent_scroll_control_button_active'));
-    
         procentScrollButtonsArr.find(item => item.dataset.number === event.target.dataset.number).classList.add('procent_scroll_control_button_active');
-        
         globalButtonsArr.forEach(item => {
             item.active = false
             if(item.dataNumber === +event.target.dataset.number) {
@@ -175,5 +173,11 @@ function createButtonToChooseColor() {
     newDeleteButton.setAttribute('data-number', `${colorsBlockDeleteButtonsArr.length}`)
     newDeleteButton.textContent = `Delete ${colorsBlockChooseButtonsArr.length} Сolor`
     newChooseBlock.append(newDeleteButton)
+
+    let newColorExamle = document.createElement('div');
+    newColorExamle.classList.add('colors_example');
+    newChooseBlock.prepend(newColorExamle);
+    colorsExampleArr.push(newColorExamle);
+    newColorExamle.setAttribute('data-number', `${colorsExampleArr.length}`)
 }
 

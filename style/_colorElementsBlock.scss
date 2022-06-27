@@ -18,5 +18,12 @@
       min-height: 30px;
       background-color: rgb(219, 204, 204);
       margin-bottom: 10px;
+      display: flex;
+      @include flex(row, flex-start, center);
+}
+.colors_example {
+    height: 90%;
+    width: 10%;
+    background-color: azure;
 }
 

@@ -2,18 +2,17 @@ const colorScroll = document.querySelector('.color_scroll');
 const colorPanel = document.querySelector('.color_panel');
 const degreeCircle = document.querySelector('.degree_circle');
 const transparencyScroll = document.querySelector('.transparency_scroll');
-const procentScrollControlButtons = document.querySelectorAll('.procent_scroll_control_button');
-const procentScrollTextInputs = document.querySelectorAll('.procent_scroll_text')
-const procentScrollButtonsArr = [...procentScrollControlButtons];
-const procentScrollInputsArr = [...procentScrollTextInputs];
+// const procentScrollControlButtons = document.querySelectorAll('.procent_scroll_control_button');
+// const procentScrollTextInputs = document.querySelectorAll('.procent_scroll_text')
+const procentScrollButtonsArr = [...document.querySelectorAll('.procent_scroll_control_button')];
+const procentScrollInputsArr = [...document.querySelectorAll('.procent_scroll_text')];
 const procentScrollBlockText = document.querySelector('.procent_scroll_block_text');
 const procentScroll = document.querySelector('.procent_scroll_control');
 const procentScrollText = document.getElementById('procent_scroll_text_1');
 const colorsBlock = document.querySelector('.colors_block')
-const colorsBlockChooseButtons = document.querySelectorAll('.colors_block_choose_button')
-const colorsBlockDeleteButtons = document.querySelectorAll('.colors_block_delete_button')
-const colorsBlockChooseButtonsArr = [...colorsBlockChooseButtons]
-const colorsBlockDeleteButtonsArr = [...colorsBlockDeleteButtons]
+const colorsBlockChooseButtonsArr = [...document.querySelectorAll('.colors_block_choose_button')]
+const colorsBlockDeleteButtonsArr = [...document.querySelectorAll('.colors_block_delete_button')]
+const colorsExampleArr = [...document.querySelectorAll('.colors_example')]
 const globalButtonsArr = []
 
 
@@ -54,7 +53,7 @@ function addEventForProcentScrollButtons(buttonsArr, inputsArr) {
     })
 }
 
-addEventForProcentScrollButtons(procentScrollControlButtons, procentScrollTextInputs)
+addEventForProcentScrollButtons(procentScrollButtonsArr, procentScrollInputsArr)
 
 
 
@@ -79,8 +78,17 @@ function buttonClass() {
             return ` rgba(${elem.coordinats1.toFixed(0)}, ${elem.coordinats2.toFixed(0)}, ${elem.coordinats3.toFixed(0)}, ${elem.transparency}) ${elem.procent}%)`
         }
 
+        lastElementProcentScroll(elem) {
+            return ` rgba(${elem.coordinats1.toFixed(0)}, ${elem.coordinats2.toFixed(0)}, ${elem.coordinats3.toFixed(0)}, 1) ${elem.procent}%)`
+        }
+        
+
         midleElement(elem) {
             return ` rgba(${elem.coordinats1.toFixed(0)}, ${elem.coordinats2.toFixed(0)}, ${elem.coordinats3.toFixed(0)}, ${elem.transparency}) ${elem.procent}%,`
+        }
+
+        midleElementProcentScroll(elem) {
+            return ` rgba(${elem.coordinats1.toFixed(0)}, ${elem.coordinats2.toFixed(0)}, ${elem.coordinats3.toFixed(0)}, 1) ${elem.procent}%,`
         }
 
         color() {
@@ -94,9 +102,27 @@ function buttonClass() {
                     background += this.midleElement(globalButtonsArr[i])
                 }
             }
-            console.log(globalButtonsArr)
+          
+            colorTitle.textContent = background;
             return background
         }
+        
+        colorProcentScroll() {
+            let background = ` linear-gradient(90deg,`
+            globalButtonsArr.sort((a, b) => a.procent - b.procent)
+
+            for (let i = 0; i < globalButtonsArr.length; i++) {
+                if (globalButtonsArr[i] === globalButtonsArr.at(-1)) {
+                    background += this.lastElementProcentScroll(globalButtonsArr[i])
+                } else {
+                    background += this.midleElementProcentScroll(globalButtonsArr[i])
+                }
+            }
+          
+            colorTitle.textContent = background;
+            return background
+        }
+
     }
 }
 

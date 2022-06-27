@@ -6,11 +6,14 @@ class ChooseFunction {
         let coordinats3X = 255 - (colorPanelButtonCoordinatsX * 255 / (colorPanel.offsetWidth));
         let coordinats3Y = (colorPanel.offsetHeight - colorPanelButtonCoordinatsY) * coordinats3X / colorPanel.offsetHeight;
         let elem = globalButtonsArr.find(item => item.active === true) // ищем нужный объект в массиве кнопок цветов, и переписываем у него координаты
-        elem.coordinats1 = coordinats1
-        elem.coordinats2 = coordinats2Y
-        elem.coordinats3 = coordinats3Y
+        elem.coordinats1 = coordinats1;
+        elem.coordinats2 = coordinats2Y;
+        elem.coordinats3 = coordinats3Y;
         colorTitle.style.background = elem.color();
-        transparencyScrollRgb.style.background = `linear-gradient(to right, rgb(${coordinats1}, ${coordinats2Y}, ${coordinats3Y}) 0%, rgba(${coordinats1}, ${coordinats2Y}, ${coordinats3Y}, 0) 100%)`
+        procentScroll.style.background = elem.colorProcentScroll();
+        transparencyScrollRgb.style.background = `linear-gradient(to right, rgb(${coordinats1}, ${coordinats2Y}, ${coordinats3Y}) 0%, rgba(${coordinats1}, ${coordinats2Y}, ${coordinats3Y}, 0) 100%)`;
+    
+        colorsExampleArr.find(item => +item.dataset.number === +elem.dataNumber).style.background = `rgb(${coordinats1}, ${coordinats2Y}, ${coordinats3Y}`;
         // debugger
     }
 
@@ -25,7 +28,9 @@ class ChooseFunction {
         elem.coordinats2 = coordinats2
         elem.coordinats3 = coordinats3Y
         colorTitle.style.background = elem.color();
+        procentScroll.style.background = elem.colorProcentScroll();
         transparencyScrollRgb.style.background = `linear-gradient(to right, rgb(${coordinats1Y}, ${coordinats2}, ${coordinats3Y}) 0%, rgba(${coordinats1Y}, ${coordinats2}, ${coordinats3Y}, 0) 100%)`
+        colorsExampleArr.find(item => +item.dataset.number === +elem.dataNumber).style.background = `rgb(${coordinats1Y}, ${coordinats2}, ${coordinats3Y}`;
     }
 
     choose3(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb) {
@@ -39,7 +44,9 @@ class ChooseFunction {
         elem.coordinats2 = coordinats2
         elem.coordinats3 = coordinats3Y
         colorTitle.style.background = elem.color();
+        procentScroll.style.background = elem.colorProcentScroll();
         transparencyScrollRgb.style.background = `linear-gradient(to right, rgb(${coordinats1Y}, ${coordinats2}, ${coordinats3Y}) 0%, rgba(${coordinats1Y}, ${coordinats2}, ${coordinats3Y}, 0) 100%)`
+        colorsExampleArr.find(item => +item.dataset.number === +elem.dataNumber).style.background = `rgb(${coordinats1Y}, ${coordinats2}, ${coordinats3Y}`;
     }
 
     choose4(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb) {
@@ -53,7 +60,9 @@ class ChooseFunction {
         elem.coordinats2 = coordinats2Y
         elem.coordinats3 = coordinats3
         colorTitle.style.background = elem.color();
+        procentScroll.style.background = elem.colorProcentScroll();
         transparencyScrollRgb.style.background = `linear-gradient(to right, rgb(${coordinats1Y}, ${coordinats2Y}, ${coordinats3}) 0%, rgba(${coordinats1Y}, ${coordinats2Y}, ${coordinats3}, 0) 100%)`
+        colorsExampleArr.find(item => +item.dataset.number === +elem.dataNumber).style.background = `rgb(${coordinats1Y}, ${coordinats2Y}, ${coordinats3}`;
     }
 
     choose5(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb) {
@@ -67,7 +76,9 @@ class ChooseFunction {
         elem.coordinats2 = coordinats2Y
         elem.coordinats3 = coordinats3
         colorTitle.style.background = elem.color();
+        procentScroll.style.background = elem.colorProcentScroll();
         transparencyScrollRgb.style.background = `linear-gradient(to right, rgb(${coordinats1Y}, ${coordinats2Y}, ${coordinats3}) 0%, rgba(${coordinats1Y}, ${coordinats2Y}, ${coordinats3}, 0) 100%)`
+        colorsExampleArr.find(item => +item.dataset.number === +elem.dataNumber).style.background = `rgb(${coordinats1Y}, ${coordinats2Y}, ${coordinats3}`;
     }
 
     choose6(colorPanelButtonCoordinatsX, colorPanelButtonCoordinatsY, colorPanel, rgbNumber, colorTitle, transparencyScrollRgb) {
@@ -81,7 +92,9 @@ class ChooseFunction {
         elem.coordinats2 = coordinats2Y
         elem.coordinats3 = coordinats3Y
         colorTitle.style.background = elem.color();
+        procentScroll.style.background = elem.colorProcentScroll();
         transparencyScrollRgb.style.background = `linear-gradient(to right, rgb(${coordinats1}, ${coordinats2Y}, ${coordinats3Y}) 0%, rgba(${coordinats1}, ${coordinats2Y}, ${coordinats3Y}, 0) 100%)`
+        colorsExampleArr.find(item => +item.dataset.number === +elem.dataNumber).style.background = `rgb(${coordinats1}, ${coordinats2Y}, ${coordinats3Y}`;
         
     }
 }
