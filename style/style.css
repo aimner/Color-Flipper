@@ -103,6 +103,7 @@
   border-radius: 15%;
   color: aliceblue;
   text-align: center;
+  cursor: move;
 }
 
 .procent_scroll_control_button_active {
