@@ -5,20 +5,23 @@
 }
 
 .degree_panel {
-    height: 50px;
+    height: 60px;
     width: 150px;
     background-color: #fff;
     display: flex;
     gap: 10px;
-    @include flex(row, flex-start, center)
+    @include flex(row, space-evenly, center);
+    border: 2px solid #000;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 .degree_panel_text {
     width: 50%;
     height: 90%;
 }
 .degree_circle {
-   width: 33%;
-   height: 100%;
+   width: 30%;
+   height: 83.3%;
    border: 3px solid black;
    border-radius: 50%;
    display: flex;

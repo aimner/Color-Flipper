@@ -14,18 +14,23 @@
 
 <body>
     <div class="container">
-        <div class="color_title">RGB (0.0.0)</div>
-        <button class="change_color">Click</button>
+        <div class="color_title"></div>
+        <span>Для добавления нового цвета нажмите на пустое место на нижней панели слева</span>
+        <span>Для выбора цвета нажмите на кнопку "Choose" на панели справа или на кнопку с цифрой на нижней левой панели</span>
+        <span>Для удаления цвета нажмите кнопку Delete(удалять первые два цвета нельзя)</span>
         <div class="control_container">
             <div class="control_block">
+                <span>Настройка цвета:</span>
                 <div class="color_scroll">
                     <div class="color_scroll_control_button" style="left: 0px;"></div>
                 </div>
+                <span>Настройка оттенка:</span>
                 <div class="color_panel">
                     <div class="color_panel_button"></div>
                     <div class="color_panel_white"></div>
                     <div class="color_panel_black"></div>
                 </div>
+                <span>Настройка градуса наклона цветов:</span>
                 <div class="degree_panel">
                     <div class="degree_circle">
                         <div class="degree_control_circle">
@@ -34,13 +39,15 @@
                     </div>
                     <input type="text" class="degree_panel_text" readonly value="0">
                 </div>
+                <span>Настройка насыщенности цвета:</span>
                 <div class="transparency_scroll">
                     <div class="transparency_scroll_rgb"></div>
                     <div class="transparency_scroll_control_button"></div>
                 </div>
+                <span>Выбор и создание нового цвета и процента от его общего заполнения:</span>
                 <div class="procent_scroll">
                     <div class="procent_scroll_control">
-                        <div class="procent_scroll_control_button" id="procent_scroll_control_button_1" data-number="1">
+                        <div class="procent_scroll_control_button " id="procent_scroll_control_button_1" data-number="1">
                             1</div>
                         <div class="procent_scroll_control_button" id="procent_scroll_control_button_2" data-number="2">
                             2</div>
@@ -57,13 +64,13 @@
             <div class="colors_block">
                 <div class="colors_block_element">
                     <div class="colors_example" data-number="1"></div>
-                    <button data-number="1" class="colors_block_choose_button">Choose 1 Color</button>
-                    <button data-number="1" class="colors_block_delete_button" hidden>Delete 1 Color</button>
+                    <button data-number="1" class="colors_block_choose_button">Choose 1 </button>
+                    <button data-number="1" class="colors_block_delete_button" hidden>Delete 1 </button>
                 </div>
                 <div class="colors_block_element">
                     <div class="colors_example" data-number="2"></div>
-                    <button data-number="2" class="colors_block_choose_button">Choose 2 Color</button>
-                    <button data-number="2" class="colors_block_delete_button" hidden>Delete 2 Color</button>
+                    <button data-number="2" class="colors_block_choose_button">Choose 2 </button>
+                    <button data-number="2" class="colors_block_delete_button" hidden>Delete 2 </button>
                 </div>
 
             </div>

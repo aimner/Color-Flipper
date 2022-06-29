@@ -3,7 +3,8 @@
     width: 450px;
     position: relative;
     background: rgb(255, 0, 0) ;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
+    border-radius: 5px;
 }
 
 .color_panel_white,
@@ -11,6 +12,7 @@
     height: 100%;
     width: 100%;
     position: absolute;
+    border-radius: 5px;
 }
 .color_panel_white {
     background: linear-gradient(to right, #fff 0%, rgba(255,255,255,0) 100%);
@@ -25,17 +27,12 @@
     width: 20px;
     height: 20px;
     background-color: none;
-    border: 2px solid black;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid rgb(255, 254, 254);
+    border-bottom: 2px solid rgb(255, 254, 254);
     border-radius: 50%;
     z-index: 1;
+    cursor: move;
 }
 
-.color_panel_button_active {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: none;
-    border: 2px solid black;
-    border-radius: 50%;
-    z-index: 1;
-}

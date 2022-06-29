@@ -8,8 +8,8 @@
 }
 
 .container {
-  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#000));
-  background: linear-gradient(to bottom, transparent 0%, #000 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#645f5f));
+  background: linear-gradient(to bottom, transparent 0%, #645f5f 100%);
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -28,9 +28,9 @@
 
 .color_title {
   width: 70%;
-  height: 40%;
+  height: 35%;
   background-color: antiquewhite;
-  margin-bottom: 5%;
+  margin-bottom: 1%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -44,7 +44,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-radius: 5px;
   font-weight: 600;
+  border: 7px inset #645f5f;
+  padding: 0 35px;
 }
 
 .change_color {
@@ -54,8 +57,8 @@
 }
 
 .control_container {
-  width: 100%;
-  height: 30%;
+  width: 70%;
+  height: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -63,16 +66,20 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  border: 5px inset #312525;
+  padding: 5px;
+  border-radius: 10px;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#764d4d));
+  background: linear-gradient(to bottom, transparent 0%, #764d4d 100%);
 }
 
 .control_block {
-  width: 70%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -87,11 +94,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.coloros_block {
-  width: 30%;
-  height: 100%;
+  border-right: 2px dashed #4e4545;
+  padding-right: 4px;
 }
 
 .procent_scroll_control_button {
@@ -107,7 +111,10 @@
 }
 
 .procent_scroll_control_button_active {
-  border: 2px solid #5f40e9;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid #fffefe;
+  border-bottom: 2px solid #fffefe;
   background-color: inherit;
   z-index: 10;
   cursor: move;
@@ -115,10 +122,10 @@
 }
 
 .procent_scroll {
-  background: white;
+  background: #a19191;
   width: 550px;
   height: 32px;
-  margin-top: 20px;
+  border: 2px solid black;
 }
 
 .procent_scroll_control {
@@ -154,15 +161,23 @@
   width: 2%;
   background-color: black;
   position: absolute;
+  border-radius: 2px;
+}
+
+.transparency_scroll_control_button:hover {
+  border: 1px solid #0e0d0d;
+  background-color: #e74d4d;
+  cursor: move;
 }
 
 .transparency_scroll {
   background-image: linear-gradient(45deg, #ccc 25%, transparent 25%), linear-gradient(-45deg, #ccc 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #ccc 75%), linear-gradient(-45deg, transparent 75%, #ccc 75%);
   background-size: 16px 16px;
   background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+  background-color: white;
   width: 450px;
   height: 32px;
-  margin-top: 20px;
+  margin-bottom: 20px;
   position: relative;
 }
 
@@ -173,7 +188,7 @@
 }
 
 .degree_panel {
-  height: 50px;
+  height: 60px;
   width: 150px;
   background-color: #fff;
   display: -webkit-box;
@@ -184,12 +199,15 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border: 2px solid #000;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 .degree_panel_text {
@@ -198,8 +216,8 @@
 }
 
 .degree_circle {
-  width: 33%;
-  height: 100%;
+  width: 30%;
+  height: 83.3%;
   border: 3px solid black;
   border-radius: 50%;
   display: -webkit-box;
@@ -248,7 +266,8 @@
   width: 450px;
   position: relative;
   background: red;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
+  border-radius: 5px;
 }
 
 .color_panel_white,
@@ -256,6 +275,7 @@
   height: 100%;
   width: 100%;
   position: absolute;
+  border-radius: 5px;
 }
 
 .color_panel_white {
@@ -273,19 +293,13 @@
   width: 20px;
   height: 20px;
   background-color: none;
-  border: 2px solid black;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid #fffefe;
+  border-bottom: 2px solid #fffefe;
   border-radius: 50%;
   z-index: 1;
-}
-
-.color_panel_button_active {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: none;
-  border: 2px solid black;
-  border-radius: 50%;
-  z-index: 1;
+  cursor: move;
 }
 
 .color_scroll {
@@ -295,6 +309,7 @@
   height: 7%;
   margin-bottom: 20px;
   position: relative;
+  border-radius: 5px;
 }
 
 .color_scroll_control_button {
@@ -302,6 +317,13 @@
   width: 2%;
   background-color: black;
   position: absolute;
+  border-radius: 2px;
+}
+
+.color_scroll_control_button:hover {
+  border: 1px solid #0e0d0d;
+  background-color: #e74d4d;
+  cursor: move;
 }
 
 .colors_block {
@@ -318,15 +340,18 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #423f3c;
+  background-color: #dbd4d4;
   width: 30%;
   height: 100%;
   overflow: auto;
+  border-radius: 5px;
+  padding: 5px;
+  border: 3px groove #645f5f;
 }
 
 .colors_block_element {
-  width: 70%;
-  min-height: 30px;
+  width: 85%;
+  min-height: 40px;
   background-color: #dbcccc;
   margin-bottom: 10px;
   display: -webkit-box;
@@ -336,17 +361,27 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 2px 0;
+  border-radius: 17px;
+  border: 2px solid black;
+}
+
+.colors_block_element_active {
+  background-color: #b59d9d;
+  border: 2px solid #a33f3f;
 }
 
 .colors_example {
   height: 90%;
-  width: 10%;
+  min-width: 14%;
   background-color: azure;
+  border-radius: 4px;
+  border: 1px solid black;
 }
 /*# sourceMappingURL=style.css.map */

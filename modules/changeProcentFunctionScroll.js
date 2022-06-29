@@ -83,6 +83,8 @@ function changeProcentScroll(event, item, inputsArr) {
 
 function changeButtonsElement(event) {
     if (event.target.classList.contains('colors_block_choose_button')) {
+        colorsBlockChooseButtonsArr.forEach(elem => elem.parentElement.classList.remove('colors_block_element_active'))
+        event.target.parentElement.classList.add('colors_block_element_active')
         procentScrollButtonsArr.forEach(item => item.classList.remove('procent_scroll_control_button_active'));
         procentScrollButtonsArr.find(item => item.dataset.number === event.target.dataset.number).classList.add('procent_scroll_control_button_active');
         globalButtonsArr.forEach(item => {
@@ -126,14 +128,14 @@ function changeButtonsElement(event) {
         let deleteChooseButton = colorsBlockChooseButtonsArr.find(item => item.dataset.number === event.target.dataset.number);
         for (let i = 1 + colorsBlockChooseButtonsArr.indexOf(deleteChooseButton); i < colorsBlockChooseButtonsArr.length; i++) {
             colorsBlockChooseButtonsArr[i].dataset.number = +colorsBlockChooseButtonsArr[i].dataset.number - 1;
-            colorsBlockChooseButtonsArr[i].textContent = `Choose ${i} Color`;
+            colorsBlockChooseButtonsArr[i].textContent = `Choose ${i}`;
         }
         colorsBlockChooseButtonsArr.splice(colorsBlockChooseButtonsArr.indexOf(deleteChooseButton), 1)
 /////////////////////////////////////////
         let deleteDeleteButton = colorsBlockDeleteButtonsArr.find(item => item.dataset.number === event.target.dataset.number);
         for (let i = 1 + colorsBlockDeleteButtonsArr.indexOf(deleteDeleteButton); i < colorsBlockDeleteButtonsArr.length; i++) {
             colorsBlockDeleteButtonsArr[i].dataset.number = +colorsBlockDeleteButtonsArr[i].dataset.number - 1;
-            colorsBlockDeleteButtonsArr[i].textContent = `Delete ${i} Color`;
+            colorsBlockDeleteButtonsArr[i].textContent = `Delete ${i}`;
         }
         colorsBlockDeleteButtonsArr.splice(colorsBlockDeleteButtonsArr.indexOf(deleteDeleteButton), 1)
 /////////////////////////////////////////
@@ -158,14 +160,6 @@ function changeButtonsElement(event) {
 
     }
 }
-
-// function changeNumber(arr, deleteElem) {
-//     for (let i = 1 + arr.indexOf(deleteElem); i < arr.length; i++) {
-//         arr[i].dataset.number = +arr[i].dataset.number - 1;
-//         arr[i].textContent = +arr[i].textContent - 1;
-//         arr[i].id = `procent_scroll_control_button_${i}`;
-//     }
-// }
 
 function createControlProcentButton(event) {
     let newButton = document.createElement('div');
@@ -208,14 +202,14 @@ function createButtonToChooseColor() {
     newChooseButton.classList.add('colors_block_choose_button')
     colorsBlockChooseButtonsArr.push(newChooseButton)
     newChooseButton.setAttribute('data-number', `${colorsBlockChooseButtonsArr.length}`)
-    newChooseButton.textContent = `Choose ${colorsBlockChooseButtonsArr.length} Сolor`
+    newChooseButton.textContent = `Choose ${colorsBlockChooseButtonsArr.length}`
     newChooseBlock.append(newChooseButton)
 
     let newDeleteButton = document.createElement('button')
     newDeleteButton.classList.add('colors_block_delete_button')
     colorsBlockDeleteButtonsArr.push(newDeleteButton)
     newDeleteButton.setAttribute('data-number', `${colorsBlockDeleteButtonsArr.length}`)
-    newDeleteButton.textContent = `Delete ${colorsBlockChooseButtonsArr.length} Сolor`
+    newDeleteButton.textContent = `Delete ${colorsBlockChooseButtonsArr.length}`
     newChooseBlock.append(newDeleteButton)
 
     let newColorExamle = document.createElement('div');

@@ -4,11 +4,19 @@
     height: 7%;
     margin-bottom: 20px;
     position: relative;
+    border-radius: 5px;
 }
 .color_scroll_control_button {
     height: 120%;
     width: 2%;
     background-color: black;
     position: absolute;
+    border-radius: 2px;
     
+}
+
+.color_scroll_control_button:hover {
+    border: 1px solid rgb(14, 13, 13);
+    background-color: rgb(231, 77, 77);
+    cursor: move;
 }
