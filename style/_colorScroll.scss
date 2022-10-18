@@ -5,18 +5,21 @@
     margin-bottom: 20px;
     position: relative;
     border-radius: 5px;
+    -webkit-box-shadow: 0px 9px 18px 6px rgba(34, 60, 80, 0.28);
+-moz-box-shadow: 0px 9px 18px 6px rgba(34, 60, 80, 0.28);
+box-shadow: 0px 9px 18px 6px rgba(34, 60, 80, 0.28);
 }
 .color_scroll_control_button {
     height: 120%;
-    width: 2%;
+    width: 2.5%;
     background-color: black;
     position: absolute;
-    border-radius: 2px;
+    border-radius: 3px;
     
 }
 
 .color_scroll_control_button:hover {
-    border: 1px solid rgb(14, 13, 13);
-    background-color: rgb(231, 77, 77);
+    border: 2px solid white;
+    // background-color: rgb(231, 77, 77);
     cursor: move;
 }

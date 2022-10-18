@@ -1,70 +1,77 @@
 @mixin flex($flex-direcction, $justify-content, $align-items) {
-    flex-direction: $flex-direcction;
-    justify-content: $justify-content;
-    align-items: $align-items;
+  flex-direction: $flex-direcction;
+  justify-content: $justify-content;
+  align-items: $align-items;
 }
 
 .procent_scroll_control_button {
-    height: 120%;
-    width: 2.5%;
-    background-color: black;
-    position: absolute;
-    border: 2px solid rgb(231, 77, 77);
-    border-radius: 15%;
-    color: aliceblue;
-    text-align: center;
-    cursor: move;
+  height: 120%;
+  width: 2.5%;
+  background-color: black;
+  position: absolute;
+  border-radius: 3px;
+  text-align: center;
+  cursor: move;
+  font-size: small;
+  &:hover {
+    border: 2px white solid;
+  }
 }
 
-
 .procent_scroll_control_button_active {
-    border-top: 2px solid black;
-    border-left: 2px solid black;
-    border-right: 2px solid rgb(255, 254, 254);
-    border-bottom: 2px solid rgb(255, 254, 254);
-    background-color: inherit;
-    z-index: 10;
-    cursor: move;
-    color: black;
+  border: 2px white solid;
+  z-index: 10;
+  cursor: move;
+  color: black;
 }
 
 .procent_scroll {
-    background: rgb(161, 145, 145);
-    width: 550px;
-    height: 32px;
-    
-    border: 2px solid black;
-
+  background: rgb(161, 145, 145);
+  width: 550px;
+  height: 32px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 9px 18px 6px rgba(34, 60, 80, 0.28);
+  -moz-box-shadow: 0px 9px 18px 6px rgba(34, 60, 80, 0.28);
+  box-shadow: 0px 9px 18px 6px rgba(34, 60, 80, 0.28);
 }
 
 .procent_scroll_control {
-    height: 100%;
-    width: 100%;
-    position: relative;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 9px 18px 6px rgba(34, 60, 80, 0.28);
+  -moz-box-shadow: 0px 9px 18px 6px rgba(34, 60, 80, 0.28);
+  box-shadow: 0px 9px 18px 6px rgba(34, 60, 80, 0.28);
 }
 
-
-
 .procent_scroll_block_text {
-    position: relative;
-    height: 100%;
-    width: 100%;
+  position: relative;
+  height: 100%;
+  width: 100%;
 
-    .procent_scroll_text {
-        width: 5%;
-        position: absolute;
-        top: 8px;
-        left: -8.25px;
-        text-align: center;
-
-    }
-
+  .procent_scroll_text {
+    width: 5%;
+    position: absolute;
+    top: 8px;
+    left: -8.25px;
+    text-align: center;
+  }
 }
 
 #procent_scroll_control_button_2 {
-    left: 100px;
+  left: 100px;
 }
 
 #procent_scroll_text_2 {
-    left: 92px;
+  left: 92px;
+}
+
+input:disabled {
+  background-color: white;
+  border: none;
+  width: 5%;
+  color: black;
+  border-radius: 3px;
+  font-size: medium;
 }

@@ -1,38 +1,40 @@
 .color_panel {
-    height: 40%;
-    width: 450px;
-    position: relative;
-    background: rgb(255, 0, 0) ;
-    margin-bottom: 20px;
-    border-radius: 5px;
+  height: 40%;
+  width: 450px;
+  position: relative;
+  background: rgb(255, 0, 0);
+  margin-bottom: 20px;
+  border-radius: 5px;
 }
 
 .color_panel_white,
 .color_panel_black {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    border-radius: 5px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 9px 18px 6px rgba(34, 60, 80, 0.28);
+  -moz-box-shadow: 0px 9px 18px 6px rgba(34, 60, 80, 0.28);
+  box-shadow: 0px 9px 18px 6px rgba(34, 60, 80, 0.28);
 }
 .color_panel_white {
-    background: linear-gradient(to right, #fff 0%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(to right, #fff 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 .color_panel_black {
-    background: linear-gradient(to bottom, transparent 0%, #000 100%);
+  background: linear-gradient(to bottom, transparent 0%, #000 100%);
 }
 
 .color_panel_button {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: none;
-    border-top: 2px solid black;
-    border-left: 2px solid black;
-    border-right: 2px solid rgb(255, 254, 254);
-    border-bottom: 2px solid rgb(255, 254, 254);
-    border-radius: 50%;
-    z-index: 1;
-    cursor: move;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: none;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid rgb(255, 254, 254);
+  border-bottom: 2px solid rgb(255, 254, 254);
+  border-radius: 50%;
+  z-index: 1;
+  cursor: move;
 }
-

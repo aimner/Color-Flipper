@@ -11,28 +11,35 @@
     display: flex;
     gap: 10px;
     @include flex(row, space-evenly, center);
-    border: 2px solid #000;
+    // border: 2px solid #000;
     border-radius: 5px;
     margin-bottom: 20px;
+    -webkit-box-shadow: 0px 9px 18px 6px rgba(34, 60, 80, 0.28);
+    -moz-box-shadow: 0px 9px 18px 6px rgba(34, 60, 80, 0.28);
+    box-shadow: 0px 9px 18px 6px rgba(34, 60, 80, 0.28);
 }
+
 .degree_panel_text {
     width: 50%;
     height: 90%;
 }
+
 .degree_circle {
-   width: 30%;
-   height: 83.3%;
-   border: 3px solid black;
-   border-radius: 50%;
-   display: flex;
-   @include flex(row, center, center)
+    width: 30%;
+    height: 83.3%;
+    border: 3px solid black;
+    border-radius: 50%;
+    display: flex;
+    @include flex(row, center, center);
 }
+
 .degree_control_circle {
     height: 100%;
     width: 8px;
     display: flex;
     @include flex(row, flex-start, flex-start);
 }
+
 .degree_control_circle_button {
     height: 8px;
     width: 100%;
@@ -40,3 +47,4 @@
     border-radius: 50%;
     margin-top: 5px;
 }
+
